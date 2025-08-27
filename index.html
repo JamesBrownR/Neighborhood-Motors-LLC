@@ -155,19 +155,6 @@
     .card:hover h3 { color:var(--red); }
     .muted{color:#cfcfd6}
     
-    /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .gallery img{
-      width:100%;height:240px;object-fit:cover;
-      border-radius:16px;border:1px solid #24242a;
-      transition:all 0.4s ease;cursor:pointer;
-    }
-    .gallery img:hover{
-      transform:scale(1.05) rotate(1deg);
-      box-shadow:0 20px 40px rgba(0,0,0,.4);
-      border-color:var(--red);
-    }
-    
     /* Reviews */
     .reviews-wrap{display:grid;grid-template-columns:1fr;gap:20px}
     .rating-row{display:flex;align-items:center;gap:16px;margin-bottom:8px}
@@ -265,7 +252,6 @@
       .phone-big{display:none}
       .phone-small{display:inline}
       .cards{grid-template-columns:1fr 1fr}
-      .gallery{grid-template-columns:1fr 1fr}
       .reviews-grid{grid-template-columns:1fr}
       .sticky-call{display:flex}
       .headline{font-size:36px}
@@ -351,20 +337,6 @@
     </div>
   </section>
 
-  <!-- =================== GALLERY =================== -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Shop & Work Gallery</h2>
-      <div class="gallery">
-        <!-- Replace src values with your actual photos (GitHub /images folder) -->
-        <img src="images/1.jpg" alt="Windshield replacement at Neighborhood Motors" loading="lazy">
-        <img src="images/2.jpg" alt="Collision repair in progress" loading="lazy">
-        <img src="images/3.jpg" alt="Technician diagnosing vehicle" loading="lazy">
-        <img src="images/4.jpg" alt="Finished repair – happy customer" loading="lazy">
-      </div>
-    </div>
-  </section>
-
   <!-- =================== REVIEWS =================== -->
   <section id="reviews">
     <div class="container">
@@ -416,12 +388,12 @@
         <label for="msg">Message</label>
         <textarea id="msg" name="message" rows="5" placeholder="Tell us what you need"></textarea>
         <button type="submit">Send Email</button>
-        <div class="tiny">Prefer to call? <a href="tel:+12137056862">Tap here</a>.</div>
+        <div class="tiny" style="margin-top:16px;">Prefer to call? <a href="tel:+12137056862">Tap here</a>.</div>
       </form>
       <div>
         <h2 class="section-title" style="margin-top:0">Find Us</h2>
-        <!-- Live Google Maps iframe (uses your provided place link) -->
-        <iframe class="map" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!4v0!6m8!1m7!3m6!1s0x87b6edff2213ca35:0xb5b0398d57ba1a6c!2m2!1d36.1529291!2d-95.978848!3f0!4f0!5f0.7820865974627469"></iframe>
+        <!-- Live Google Maps iframe -->
+        <iframe class="map" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
         <div class="pill" style="margin-top:16px">
           <b>Neighborhood Motors</b><br>
           1023 E 6th St, Tulsa, OK 74120
@@ -613,11 +585,6 @@ Happy to help Stefan!`},
       // Observe service cards
       document.querySelectorAll('.service-card').forEach(card => {
         observer.observe(card);
-      });
-      
-      // Observe gallery images
-      document.querySelectorAll('.gallery img').forEach(img => {
-        observer.observe(img);
       });
     });
 
