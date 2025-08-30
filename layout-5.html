@@ -397,6 +397,279 @@
     </div>
   </section>
 
-  <!-- The rest of the HTML is the same as the fixed layout-1.html, including reviews, contact, footer, and scripts. Copy them from above. -->
+   <!-- =================== REVIEWS =================== -->
+  <section id="reviews">
+    <div class="container">
+      <div class="reviews-wrap">
+        <div class="rating-row">
+          <div class="stars" aria-label="Average rating 4.6 out of 5">
+            <!-- 4.6 stars -->
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="half"><stop offset="60%" stop-color="currentColor"/><stop offset="60%" stop-color="#333"/></linearGradient></defs><path fill="url(#half)" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <div><b style="font-size:20px">4.6</b> average rating • <span id="reviewCount">21</span> reviews</div>
+        </div>
+        <div class="reviews-grid" id="reviewsGrid" aria-live="polite"></div>
+        <div class="show-more"><button id="showMoreBtn" hidden>Show more</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== BOOK / CONTACT =================== -->
+  <section id="booking">
+    <div class="container contact">
+      <form id="contactForm">
+        <h2 class="section-title" style="margin-top:0">Email Us</h2>
+        <!--
+          Form submission options:
+          - By default this opens an email with mailto: (works from GitHub Pages)
+          - To connect to Formspree or your backend, set data-endpoint to your POST URL.
+        -->
+        <input type="hidden" name="_subject" value="Website Inquiry – Neighborhood Motors">
+        <label for="name">Name</label>
+        <input id="name" name="name" autocomplete="name" placeholder="Your name" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required>
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(###) ###‑####">
+        <label for="service">Service</label>
+        <select id="service" name="service">
+          <option>Auto Glass</option>
+          <option>Towing & Roadside</option>
+          <option>Full Service Auto Repair</option>
+          <option>Auto Electric</option>
+          <option>Collision Repair</option>
+          <option>Upholstery Repair</option>
+          <option>Other</option>
+        </select>
+        <label for="msg">Message</label>
+        <textarea id="msg" name="message" rows="5" placeholder="Tell us what you need"></textarea>
+        <button type="submit">Send Email</button>
+        <div class="tiny" style="margin-top:16px;">Prefer to call? <a href="tel:+12137056862">Tap here</a>.</div>
+      </form>
+      <div>
+        <h2 class="section-title" style="margin-top:0">Find Us</h2>
+        <!-- Live Google Maps iframe -->
+        <iframe class="map" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
+        <div class="pill" style="margin-top:16px">
+          <b>Neighborhood Motors</b><br>
+          1023 E 6th St, Tulsa, OK 74120
+        </div>
+        <div class="pill" style="margin-top:16px">
+          <b>Online Booking (Square)</b><br>
+          <!--
+            Replace YOUR_LOCATION_ID below with your actual Square Location ID.
+            If you have the Square Web Payments/Bookings widget, paste it here.
+          -->
+          <div id="square-booking" data-square-location="YOUR_LOCATION_ID"></div>
+          <div class="tiny"><!-- Implementation note: insert Square appointment embed script for your account and use data-square-location -->
+            <!-- Example placeholder – keep for dev reference only -->
+            <!-- <script src="https://web.squarecdn.com/v1/square.js" async></script> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FOOTER =================== -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="gap:12px">
+          <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 19.59 18.42 16a5.5 5.5 0 0 1-7.78-7.78L8 5.59 5.59 8l2.63 2.64a5.5 5.5 0 0 0 7.78 7.78L19.59 22 22 19.59z"></path></svg></div>
+          <div>
+            <b>Neighborhood Motors</b><br>
+            <span class="tiny">Auto Glass • Collision • Full Service Auto Repair</span>
+          </div>
+        </div>
+        <div style="margin-top:12px" class="tiny">© <span id="year"></span> Neighborhood Motors, Tulsa, OK</div>
+      </div>
+      <div>
+        <b>Contact</b><br>
+        <a href="tel:+12137056862">+1 (213) 705‑6862</a><br>
+        <a href="mailto:service@neighborhoodmotors.example">service@neighborhoodmotors.example</a><br>
+        <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div>
+        <b>Hours</b>
+        <div class="tiny">Mon–Thu 10 AM–9 PM • Fri 10 AM–10 PM • Sat 11 AM–10 PM • Sun 1–7 PM</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================== SCRIPTS =================== -->
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Animation observers
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('service-card')) {
+            const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
+            setTimeout(() => {
+              entry.target.style.animation = `fadeInUp 0.6s ease-out forwards`;
+            }, delay);
+          } else if (entry.target.tagName === 'IMG') {
+            const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 150;
+            setTimeout(() => {
+              entry.target.style.animation = `fadeInUp 0.6s ease-out forwards`;
+            }, delay);
+          } else if (entry.target.classList.contains('review')) {
+            const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
+            setTimeout(() => {
+              entry.target.style.animation = `fadeInUp 0.5s ease-out forwards`;
+            }, delay);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Hero animations
+    setTimeout(() => {
+      document.querySelector('.hero-inner > div:first-child').classList.add('animate-fade-in-left');
+      document.querySelector('.hero-inner > div:last-child').classList.add('animate-fade-in-right');
+    }, 300);
+
+    // Contact form: mailto fallback (works on GitHub Pages). If data-endpoint is set, POST there instead.
+    document.getElementById('contactForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const form = e.currentTarget;
+      const data = new FormData(form);
+      const endpoint = form.dataset.endpoint; // optional custom POST URL
+      if(endpoint){
+        try{
+          await fetch(endpoint,{method:'POST',body:data});
+          alert('Thanks! We\'ll be in touch.');
+          form.reset();
+        }catch(err){
+          alert('Message failed to send. Please call us.');
+        }
+      }else{
+        const params = new URLSearchParams();
+        for (const [k,v] of data.entries()) params.append(k,v);
+        window.location.href = `mailto:service@neighborhoodmotors.example?subject=${encodeURIComponent('Website Inquiry – Neighborhood Motors')}&body=${encodeURIComponent(Array.from(data.entries()).map(([k,v])=>`${k}: ${v}`).join('\n'))}`;
+      }
+    });
+
+    // =================== Reviews ===================
+    // IMPORTANT: Per client requirement, do not change the main content of reviews.
+    // We keep each review text exactly as provided. Some reviews intentionally have no description.
+    const REVIEWS = [
+      {name:'Nicci Johnson', stars:5, meta:'5 reviews · 1 photo • a month ago', body:`Omg !!! They fixed my 2011 Edge windshield....My hood came unlatched on the highway and bam!!!! They were amazing 👏.... they were kind ....clean and cool place to wait ...and best priced compared to 5 other companies.... they are awesome 👌 …`},
+      {name:'Alana Wilson', stars:5, meta:'8 reviews · 1 photo • a year ago', body:`I've had a great experience with this auto shop.
+They are very understanding, they have great communication, and have great prices.
+They will help you as much as they can. Their shop looks nice, and cleaned up as well. Overall great work to my car,great prices,great social interaction, and very helpful.
+They even offered to deliver my car to me..
+I will be coming back to get my breaks done here in a few weeks.`},
+      {name:'Allison Terry', stars:5, meta:'3 reviews · 3 photos • a year ago', body:`Good guy Nice people. They stayed at the shop until 11:45pm to finish up my car for me so I could have it the next day for my commute. Changed a battery and an alternator on my 2007 Honda CR-V and gave me a 1 year warranty on the parts. Responsive through text which is nice and great hours for the customer!! Saving his number for my future repair needs
+
+Response from the owner a year ago
+Happy to help Allison. Thank you for your business & we are here for your future needs!`},
+      {name:'Ana Elizondo', stars:5, meta:'Local Guide · 27 reviews • 10 months ago', body:`I am very grateful for finding this place! I was able to stay up to date on the entire process, I was very satisfied with the price, and the time it took to get my window fixed was outstanding! Neighborhood Motors truly saved my day and … More`},
+      {name:'Stefan Taitano', stars:5, meta:'13 reviews · 7 photos • a year ago', body:`Getting the front bumper protector fixed on my vehicle from Fernando was a breeze. Communication was smooth and easy from start to end, and managed to complete the work in less time compared to other collision centers in the Tulsa area. … More
+
+Response from the owner a year ago
+Happy to help Stefan!`},
+      {name:'Mason Pollay', stars:5, meta:'13 reviews · 1 photo • 5 months ago', body:`Great guy! Super quick! Got my car in and out in a day! Definitely recommend!!`},
+      {name:'Johnny Goodenough', stars:5, meta:'1 review • a year ago', body:`Great customer service they replaced  my serpentine belt and my AC compressor keep me updated on everything that was happening overall a really good experience only took a day to. Definitely would recommend this shop`},
+      {name:'Kristin Cannon', stars:5, meta:'1 review • a year ago', body:`They replaced the entire clutch system in a matter of days! Very friendly and fast service. Best pricing and hardest working in Tulsa area!`},
+      {name:'Lesli Hernandez', stars:5, meta:'5 reviews · 4 photos • a year ago', body:`Very pleased with the service I had received with this business! They worked on my transmission, which only took them about a week to finish. I Highly recommend!`},
+      {name:'Suyeong Choi', stars:5, meta:'2 reviews • 11 months ago', body:`I fixed my 2024 Kia forte at this repair shop. Very affordable and reasonable pricing, and kind and friendly technician.`},
+      {name:'Kenny Q.', stars:5, meta:'2 reviews • a year ago', body:`Got my car bumper replaced. Very personable. Very easy to work with. Flexible with scheduling, too!`},
+      {name:'Alex Diaz', stars:5, meta:'3 reviews • 2 years ago', body:`Was fast at figure out what the problem is and able to locate parts quickly. Figure out what the problem was, and gave me a solution within an hour of bringing the vehicle in. More`},
+      {name:'turtleblazed', stars:5, meta:'6 reviews • a year ago', body:`Very quick to find out the problem & get my car up & running again. Thank you.`},
+      {name:'Jonathan Balderas', stars:5, meta:'Local Guide · 15 reviews • 3 years ago', body:`Probably one of the best experiences I've had at a car dealership.`},
+      {name:'FROGGY_PR', stars:5, meta:'3 reviews · 1 photo • a year ago', body:`Knowledgeable and communicative staff, friendly and flexible. Will go again next time :)`},
+      {name:'Carmelo Betor', stars:5, meta:'1 review • a year ago', body:`They put some hours in, and got my car running.`},
+      {name:'Mohammad Al Musawi', stars:5, meta:'22 reviews • 3 years ago', body:`Great experience , friendly staff would definitely come back!`},
+      {name:'Jose Aguilar', stars:5, meta:'Local Guide · 33 reviews · 5 photos • 4 months ago', body:``},
+      {name:'Billy Lor', stars:5, meta:'Local Guide · 72 reviews · 62 photos • a year ago', body:``},
+      {name:'Devyn Izydor', stars:5, meta:'5 reviews · 1 photo • a year ago', body:``},
+      {name:'Giovana Flores', stars:1, meta:'4 reviews • 2 years ago', body:``}
+    ];
+
+    // Render reviews in groups of 6 with progressive reveal
+    const grid = document.getElementById('reviewsGrid');
+    const btn = document.getElementById('showMoreBtn');
+    const BATCH = 6;
+    let rendered = 0;
+
+    function starSVG(filled=true){
+      return `<svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="${filled?'currentColor':'#333'}" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`;
+    }
+
+    function renderNext(){
+      const next = REVIEWS.slice(rendered, rendered + BATCH);
+      next.forEach(r=>{
+        const item = document.createElement('article');
+        item.className = 'review';
+        const stars = Array.from({length:5}).map((_,i)=> starSVG(i < r.stars)).join('');
+        item.innerHTML = `
+          <h4>${r.name}</h4>
+          <div class="meta">${r.meta}</div>
+          <div class="stars" aria-label="${r.stars} out of 5">${stars}</div>
+          <div class="body">${r.body}</div>
+        `;
+        grid.appendChild(item);
+        observer.observe(item);
+      });
+      rendered += next.length;
+      const remaining = REVIEWS.length - rendered;
+      if(remaining > 0){
+        btn.hidden = false;
+        btn.textContent = `Show ${Math.min(BATCH, remaining)} more (total ${remaining})`;
+      }else{
+        btn.hidden = true;
+      }
+    }
+
+    btn.addEventListener('click', renderNext);
+    renderNext(); // initial 6
+
+    // Update review count display just in case
+    document.getElementById('reviewCount').textContent = REVIEWS.length;
+
+    // Initialize observers for existing elements
+    document.addEventListener('DOMContentLoaded', () => {
+      // Observe service cards
+      document.querySelectorAll('.service-card').forEach(card => {
+        observer.observe(card);
+      });
+    });
+
+    // =================== Schema.org LocalBusiness ===================
+    const schema = {
+      '@context':'https://schema.org',
+      '@type':'AutoRepair',
+      'name':'Neighborhood Motors',
+      'telephone':'+1-213-705-6862',
+      'address':{'@type':'PostalAddress','streetAddress':'1023 E 6th St','addressLocality':'Tulsa','addressRegion':'OK','postalCode':'74120','addressCountry':'US'},
+      'image':['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg'],
+      'url':location.href,
+      'sameAs':['https://www.instagram.com/neighborhoodmotorsautogroup'],
+      'openingHoursSpecification':[
+        {'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday'],'opens':'10:00','closes':'21:00'},
+        {'@type':'OpeningHoursSpecification','dayOfWeek':'Friday','opens':'10:00','closes':'22:00'},
+        {'@type':'OpeningHoursSpecification','dayOfWeek':'Saturday','opens':'11:00','closes':'22:00'},
+        {'@type':'OpeningHoursSpecification','dayOfWeek':'Sunday','opens':'13:00','closes':'19:00'}
+      ],
+      'aggregateRating':{'@type':'AggregateRating','ratingValue':'4.6','reviewCount':REVIEWS.length}
+    };
+    const ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify(schema);
+    document.head.appendChild(ld);
+  </script>
 </body>
 </html>
