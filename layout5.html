@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neighborhood Motors – Auto Repair, Collision, Glass & More | Tulsa, OK</title>
+  <meta name="description" content="Neighborhood Motors in Tulsa, OK. Auto Glass, Full Service Auto Repair, Collision, Upholstery, Auto Electric, Towing & Roadside. Call now: +1 (213) 705-6862." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --red:#d90429; /* primary brand red */
+      --red-600:#b40322;
+      --black:#0f0f10;
+      --gray-900:#f8f8f8;
+      --gray-800:#e0e0e0;
+      --gray-700:#c0c0c0;
+      --gray-500:#808080;
+      --gray-200:#404040;
+      --white:#000000;
+      --maxw:1200px;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.18);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--gray-900);color:var(--black);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:var(--red);text-decoration:none;transition:all 0.3s ease}
+    a:hover{color:#ff4966;transform:translateY(-1px)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(217,4,41,.3), var(--shadow); }
+      50% { box-shadow: 0 0 30px rgba(217,4,41,.6), var(--shadow); }
+    }
+
+    .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    .animate-fade-in-left { animation: fadeInLeft 0.8s ease-out forwards; }
+    .animate-fade-in-right { animation: fadeInRight 0.8s ease-out forwards; }
+    .animate-slide-down { animation: slideDown 0.6s ease-out forwards; }
+
+    /* Initially hidden for animations */
+    .hero-inner > div:first-child { opacity: 0; }
+    .hero-inner > div:last-child { opacity: 0; }
+    .service-card { opacity: 0; transform: translateY(30px); }
+    .gallery img { opacity: 0; transform: scale(0.95); }
+    .review { opacity: 0; transform: translateY(20px); }
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:linear-gradient(180deg,var(--gray-900),var(--gray-800));
+      border-bottom:1px solid #ddd;
+      backdrop-filter: blur(10px);
+      animation: slideDown 0.6s ease-out;
+    }
+    .topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 0;flex-wrap:wrap}
+    .brand{display:flex;gap:12px;align-items:center;min-width:0;flex:1}
+    .logo{
+      width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+      background:var(--red);box-shadow:var(--shadow);
+      transition:all 0.3s ease;flex-shrink:0;
+    }
+    .logo:hover { animation: pulse 0.6s ease-in-out; }
+    .logo svg{width:24px;height:24px;fill:var(--gray-900)}
+    .brand h1{margin:0;font-size:18px;font-weight:800;letter-spacing:.2px;line-height:1.2}
+    .brand .tiny{font-size:11px;line-height:1.3;margin-top:2px}
+    .cta{display:flex;gap:12px;align-items:center;flex-shrink:0}
+    .call-btn, .book-btn{
+      display:inline-flex;gap:8px;align-items:center;font-weight:700;
+      border-radius:999px;padding:10px 16px;transition:all 0.3s ease;
+      font-size:16px;white-space:nowrap;
+    }
+    .call-btn{
+      background:var(--red);color:var(--gray-900);
+      animation: glow 2s ease-in-out infinite;
+    }
+    .call-btn:hover{background:var(--red-600);transform:translateY(-2px) scale(1.02)}
+    .book-btn{background:#f0f0f0;color:var(--black);border:1px solid #ddd}
+    .book-btn:hover{background:#e0e0e0;transform:translateY(-2px)}
+    .phone-small{display:none}
+    
+    /* Hero */
+    .hero{
+      background: radial-gradient(1000px 460px at 50% -100px, rgba(217,4,41,.35), transparent 60%);
+      padding:40px 0 30px;
+    }
+    .hero-inner{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      background:#f0f0f0;border:1px solid #ddd;
+      padding:8px 14px;border-radius:999px;margin-bottom:16px;
+      color:#333;transition:all 0.3s ease;font-size:14px;
+    }
+    .badge:hover { transform: translateY(-2px); background:#e0e0e0; }
+    .headline{
+      font-size:32px;line-height:1.1;margin:6px 0 12px;font-weight:800;
+      background: linear-gradient(135deg, var(--black), #555);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub{color:#555;max-width:100%;font-size:16px;margin-bottom:20px;line-height:1.5}
+    .hero-card{
+      background:#f8f8f8;border:1px solid #ddd;
+      border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);
+      transition:all 0.3s ease;
+    }
+    .hero-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,.1); }
+    .grid3{display:grid;grid-template-columns:1fr;gap:12px}
+    .pill{
+      background:#f0f0f0;border:1px solid #ddd;
+      border-radius:12px;padding:12px;transition:all 0.3s ease;font-size:14px;
+    }
+    .pill:hover { background:#e0e0e0; transform: translateY(-2px); }
+    .pill b{color:#000}
+    
+    /* Services */
+    section{padding:40px 0}
+    .section-title{font-size:24px;margin:0 0 20px;font-weight:800}
+    .cards{display:grid;grid-template-columns:1fr;gap:16px}
+    .card{
+      background:#f8f8f8;border:1px solid #ddd;
+      border-radius:16px;padding:16px;min-height:120px;
+      display:flex;flex-direction:column;gap:8px;
+      transition:all 0.4s ease;
+      cursor:pointer;
+    }
+    .card:hover{
+      background:#e0e0e0;transform:translateY(-8px) scale(1.02);
+      box-shadow:0 15px 35px rgba(217,4,41,.2);
+      border-color:#d90429;
+    }
+    .card h3{margin:2px 0 0;font-size:16px;transition:color 0.3s ease}
+    .card:hover h3 { color:var(--red); }
+    .muted{color:#666;font-size:14px}
+    .service-icon { width: 24px; height: 24px; fill: var(--red); }
+    
+    /* Reviews */
+    .reviews-wrap{display:grid;grid-template-columns:1fr;gap:16px}
+    .rating-row{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+    .stars{display:inline-flex;gap:2px}
+    .star{width:18px;height:18px;transition:transform 0.2s ease}
+    .star:hover { transform: scale(1.2) rotate(10deg); }
+    .review{
+      background:#f8f8f8;border:1px solid #ddd;
+      border-radius:16px;padding:16px;
+      transition:all 0.3s ease;
+      margin-bottom:12px;
+    }
+    .review:hover{
+      background:#e0e0e0;transform:translateY(-3px);
+      box-shadow:0 10px 25px rgba(0,0,0,.1);
+    }
+    .review h4{margin:0 0 4px;font-size:15px}
+    .review .meta{color:#999;font-size:12px;margin-bottom:6px}
+    .review .body{white-space:pre-wrap;line-height:1.4;font-size:14px}
+    .reviews-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .show-more{margin-top:12px;display:flex;justify-content:center}
+    .show-more button{
+      background:#f0f0f0;border:1px solid #ddd;color:#000;
+      border-radius:999px;padding:10px 20px;font-weight:700;
+      transition:all 0.3s ease;font-size:14px;
+    }
+    .show-more button:hover{
+      background:#e0e0e0;transform:translateY(-2px);
+      box-shadow:0 5px 15px rgba(0,0,0,.1);
+    }
+    
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr;gap:24px}
+    form{
+      background:#f8f8f8;border:1px solid #ddd;
+      border-radius:16px;padding:20px;
+      transition:all 0.3s ease;
+    }
+    form:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,.05); }
+    label{display:block;margin:12px 0 6px;font-weight:600;font-size:14px}
+    input, textarea, select{
+      width:100%;border-radius:12px;border:1px solid #ddd;
+      background:#fff;color:#000;padding:12px;
+      transition:all 0.3s ease;font-size:16px;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline:none;border-color:var(--red);
+      box-shadow:0 0 0 3px rgba(217,4,41,.1);
+    }
+    input::placeholder, textarea::placeholder{color:#aaa}
+    button[type="submit"]{
+      margin-top:12px;background:var(--red);color:#fff;
+      border:none;border-radius:12px;padding:12px 18px;
+      font-weight:800;transition:all 0.3s ease;font-size:16px;width:100%;
+    }
+    button[type="submit"]:hover{
+      background:var(--red-600);transform:translateY(-2px);
+      box-shadow:0 5px 15px rgba(217,4,41,.3);
+    }
+    iframe.map{
+      width:100%;min-height:300px;border:1px solid #ddd;
+      border-radius:16px;transition:all 0.3s ease;
+    }
+    iframe.map:hover { transform: scale(1.01); box-shadow: 0 10px 25px rgba(0,0,0,.1); }
+    
+    /* Footer */
+    footer{padding:32px 0;border-top:1px solid #ddd;color:#666}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .tiny{font-size:12px;color:#888}
+    
+    /* Sticky mobile call bar */
+    .sticky-call{
+      position:fixed;z-index:60;inset:auto 16px 16px;
+      display:flex;justify-content:center;animation:fadeInUp 0.5s ease-out;
+    }
+    .sticky-call a{
+      display:inline-flex;gap:10px;align-items:center;
+      background:var(--red);color:#fff;padding:14px 20px;
+      border-radius:999px;box-shadow:var(--shadow);
+      font-weight:800;font-size:16px;
+      transition:all 0.3s ease;
+    }
+    .sticky-call a:hover { transform: translateY(-3px) scale(1.05); }
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    
+    /* Desktop optimizations */
+    @media (min-width:768px){
+      .container{padding:0 32px}
+      .hero{padding:60px 0 40px}
+      .hero-inner{grid-template-columns:1.1fr .9fr;gap:40px}
+      .grid3{grid-template-columns:repeat(3,1fr);gap:16px}
+      .headline{font-size:48px;margin:8px 0 16px}
+      .sub{font-size:18px;margin-bottom:24px}
+      .hero-card{padding:24px}
+      .pill{padding:16px;font-size:inherit}
+      .badge{padding:10px 16px;margin-bottom:20px;font-size:inherit}
+      .section-title{font-size:32px;margin:0 0 24px}
+      .cards{grid-template-columns:repeat(2,1fr);gap:20px}
+      .card{padding:20px;min-height:140px;gap:12px}
+      .card h3{font-size:18px}
+      .muted{font-size:inherit}
+      .reviews-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+      .review{padding:20px;margin-bottom:16px}
+      .review h4{font-size:16px;margin:0 0 6px}
+      .review .meta{font-size:13px;margin-bottom:8px}
+      .review .body{font-size:inherit}
+      .contact{grid-template-columns:1fr 1fr;gap:32px}
+      form{padding:24px}
+      label{margin:16px 0 8px;font-size:inherit}
+      input, textarea, select{padding:14px}
+      button[type="submit"]{margin-top:16px;padding:14px 20px;width:auto}
+      iframe.map{min-height:380px}
+      section{padding:60px 0}
+      .footer-grid{grid-template-columns:1fr 1fr 1fr;gap:24px}
+      .sticky-call{display:none}
+      .topbar{padding:16px 0;gap:24px;flex-wrap:nowrap}
+      .brand{gap:16px}
+      .logo{width:48px;height:48px;border-radius:12px}
+      .logo svg{width:28px;height:28px}
+      .brand h1{font-size:22px}
+      .brand .tiny{font-size:inherit}
+      .cta{gap:16px}
+      .call-btn, .book-btn{padding:14px 20px;font-size:18px;gap:12px}
+    }
+
+    @media (min-width:1000px){
+      .cards{grid-template-columns:repeat(3,1fr)}
+      .reviews-grid{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media (min-width:1200px){
+      .cards{grid-template-columns:repeat(6,1fr)}
+    }
+    
+    /* Touch-friendly improvements */
+    @media (hover: none) and (pointer: coarse) {
+      .card:hover, .review:hover, .pill:hover, .hero-card:hover, 
+      .form:hover, .iframe.map:hover {
+        transform: none;
+      }
+      .call-btn:hover, .book-btn:hover, .show-more button:hover,
+      button[type="submit"]:hover, .sticky-call a:hover,
+      .logo:hover, .badge:hover, a:hover {
+        transform: none;
+      }
+    }
+
+    /* Responsive utilities */
+    @media (max-width:767px){
+      .phone-big{display:none}
+      .phone-small{display:inline-flex}
+    }
+  </style>
+  <noscript>
+    <style>
+      .hero-inner > div:first-child { opacity: 1 !important; }
+      .hero-inner > div:last-child { opacity: 1 !important; }
+      .service-card { opacity: 1 !important; transform: translateY(0) !important; }
+      .gallery img { opacity: 1 !important; transform: scale(1) !important; }
+      .review { opacity: 1 !important; transform: translateY(0) !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <!-- =================== HEADER =================== -->
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- simple wrench icon -->
+          <svg viewBox="0 0 24 24" role="img" aria-label="Neighborhood Motors logo icon"><path d="M22 19.59 18.42 16a5.5 5.5 0 0 1-7.78-7.78L8 5.59 5.59 8l2.63 2.64a5.5 5.5 0 0 0 7.78 7.78L19.59 22 22 19.59z"></path></svg>
+        </div>
+        <div>
+          <h1>Neighborhood Motors</h1>
+          <div class="tiny">Auto Glass • Collision • Full Service Auto Repair • Tulsa, OK</div>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="book-btn" href="#booking">Book Online</a>
+        <a class="call-btn phone-big" href="tel:+12137056862" aria-label="Call Neighborhood Motors at +1 213 705 6862">
+          <!-- phone icon -->
+          <svg class="i" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C11.4 22 2 12.6 2 1a1 1 0 0 1 1-1h4.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/></svg>
+          <span>+1 (213) 705-6862</span>
+        </a>
+        <a class="call-btn phone-small" href="tel:+12137056862" aria-label="Tap to call">Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- sticky mobile call -->
+  <div class="sticky-call"><a href="tel:+12137056862" aria-label="Tap to call Neighborhood Motors">
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C11.4 22 2 12.6 2 1a1 1 0 0 1 1-1h4.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/></svg>
+    Call Now</a></div>
+
+  <!-- =================== HERO =================== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="badge" aria-label="Open Hours"><span>Open Today</span> • <b>See hours below</b></div>
+        <div class="headline">Auto Glass, Collision & Full Service Auto Repair — <span style="color:var(--red)">Done Right</span></div>
+        <p class="sub">Auto Glass 🚗 • Towing & Roadside Services 🪝 • Full Service Auto Repair 🔧 🧰 • Auto Electric 🚘 🛠️ • Collision Repair 💥🚗🛻 • Auto Upholstery Repair 🪡</p>
+        <div class="hero-card">
+          <div class="grid3">
+            <div class="pill"><b>Address</b><br>1023 E 6th St, Tulsa, OK 74120</div>
+            <div class="pill"><b>Call</b><br><a href="tel:+12137056862">+1 (213) 705-6862</a></div>
+            <div class="pill"><b>Instagram</b><br>
+              <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener">@neighborhoodmotorsautogroup</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Hours">
+        <b style="font-size:18px">Hours</b>
+        <div class="grid3" style="margin-top:12px">
+          <div class="pill"><b>Mon–Thu</b><br>10 AM–9 PM</div>
+          <div class="pill"><b>Fri</b><br>10 AM–10 PM</div>
+          <div class="pill"><b>Sat</b><br>11 AM–10 PM</div>
+          <div class="pill"><b>Sun</b><br>1–7 PM</div>
+          <div class="pill"><b>Walk‑ins</b><br>Welcome</div>
+          <div class="pill"><b>After‑hours</b><br>By appointment</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== SERVICES =================== -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <div class="cards" role="list">
+        <div class="card service-card" role="listitem"><svg class="service-icon" viewBox="0 0 24 24"><path d="M3 13h18v8H3zM4 20h16v-6H4v6zM3 3h18v8H3zM4 10h16V4H4v6z"/></svg><h3>Auto Glass</h3><div class="muted">Chip repair • Windshields • Calibration</div></div>
+        <div class="card service-card" role="listitem"><svg class="service-icon" viewBox="0 0 24 24"><path d="M18 4h-2v2h2V4zm-4 0h-2v2h2V4zm-4 0H8v2h2V4zM6 4H4v2h2V4zm12 6h-2v2h2v-2zm-4 0h-2v2h2v-2zm-4 0H8v2h2v-2zM6 10H4v2h2v-2zm12 6h-2v2h2v-2zm-4 0h-2v2h2v-2zm-4 0H8v2h2v-2zM6 16H4v2h2v-2z"/></svg><h3>Towing & Roadside</h3><div class="muted">Jump starts • Tire change • Lockouts</div></div>
+        <div class="card service-card" role="listitem"><svg class="service-icon" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/></svg><h3>Full Service Repair</h3><div class="muted">Brakes • Suspension • Engine • A/C</div></div>
+        <div class="card service-card" role="listitem"><svg class="service-icon" viewBox="0 0 24 24"><path d="M12 2L2 12h3v8h14v-8h3L12 2zm0 2.83L17.17 10H6.83L12 4.83zM7 18v-6h10v6H7z"/></svg><h3>Auto Electric</h3><div class="muted">Diagnostics • Batteries • Alternators</div></div>
+        <div class="card service-card" role="listitem"><svg class="service-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg><h3>Collision Repair</h3><div class="muted">Bumpers • Panels • Frame</div></div>
+        <div class="card service-card" role="listitem"><svg class="service-icon" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/></svg><h3>Upholstery Repair</h3><div class="muted">Seats • Headliners • Stitching</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The rest of the HTML is the same as the fixed layout-1.html, including reviews, contact, footer, and scripts. Copy them from above. -->
+</body>
+</html>
