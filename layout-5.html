@@ -67,6 +67,159 @@
     .gallery img { opacity: 0; transform: scale(0.95); }
     .review { opacity: 0; transform: translateY(20px); }
 
+    /* Services */
+    section{padding:40px 0}
+    .section-title{font-size:24px;margin:0 0 20px;font-weight:800}
+    .cards{display:grid;grid-template-columns:1fr;gap:16px}
+    .card{
+      background:#151519;border:1px solid #24242a;
+      border-radius:16px;padding:16px;min-height:120px;
+      display:flex;flex-direction:column;gap:8px;
+      transition:all 0.4s ease;
+      cursor:pointer;
+    }
+    .card:hover{
+      background:#1a1a1f;transform:translateY(-8px) scale(1.02);
+      box-shadow:0 15px 35px rgba(217,4,41,.2);
+      border-color:#d90429;
+    }
+    .card h3{margin:2px 0 0;font-size:16px;transition:color 0.3s ease}
+    .card:hover h3 { color:var(--red); }
+    .muted{color:#cfcfd6;font-size:14px}
+    
+    /* Reviews */
+    .reviews-wrap{display:grid;grid-template-columns:1fr;gap:16px}
+    .rating-row{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+    .stars{display:inline-flex;gap:2px}
+    .star{width:18px;height:18px;transition:transform 0.2s ease}
+    .star:hover { transform: scale(1.2) rotate(10deg); }
+    .review{
+      background:#141419;border:1px solid #24242a;
+      border-radius:16px;padding:16px;
+      transition:all 0.3s ease;
+      margin-bottom:12px;
+    }
+    .review:hover{
+      background:#191920;transform:translateY(-3px);
+      box-shadow:0 10px 25px rgba(0,0,0,.2);
+    }
+    .review h4{margin:0 0 4px;font-size:15px}
+    .review .meta{color:#c9c9cf;font-size:12px;margin-bottom:6px}
+    .review .body{white-space:pre-wrap;line-height:1.4;font-size:14px}
+    .reviews-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .show-more{margin-top:12px;display:flex;justify-content:center}
+    .show-more button{
+      background:#1e1e22;border:1px solid #2a2a30;color:#fff;
+      border-radius:999px;padding:10px 20px;font-weight:700;
+      transition:all 0.3s ease;font-size:14px;
+    }
+    .show-more button:hover{
+      background:#2a2a30;transform:translateY(-2px);
+      box-shadow:0 5px 15px rgba(0,0,0,.2);
+    }
+    
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr;gap:24px}
+    form{
+      background:#141419;border:1px solid #24242a;
+      border-radius:16px;padding:20px;
+      transition:all 0.3s ease;
+    }
+    form:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,.15); }
+    label{display:block;margin:12px 0 6px;font-weight:600;font-size:14px}
+    input, textarea, select{
+      width:100%;border-radius:12px;border:1px solid #2a2a30;
+      background:#1b1b20;color:#fff;padding:12px;
+      transition:all 0.3s ease;font-size:16px;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline:none;border-color:var(--red);
+      box-shadow:0 0 0 3px rgba(217,4,41,.1);
+    }
+    input::placeholder, textarea::placeholder{color:#9a9aa2}
+    button[type="submit"]{
+      margin-top:12px;background:var(--red);color:#fff;
+      border:none;border-radius:12px;padding:12px 18px;
+      font-weight:800;transition:all 0.3s ease;font-size:16px;width:100%;
+    }
+    button[type="submit"]:hover{
+      background:var(--red-600);transform:translateY(-2px);
+      box-shadow:0 5px 15px rgba(217,4,41,.3);
+    }
+    iframe.map{
+      width:100%;min-height:300px;border:1px solid #24242a;
+      border-radius:16px;transition:all 0.3s ease;
+    }
+    iframe.map:hover { transform: scale(1.01); box-shadow: 0 10px 25px rgba(0,0,0,.2); }
+    
+    /* Footer */
+    footer{padding:32px 0;border-top:1px solid #1f1f22;color:#c7c7ce}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .tiny{font-size:12px;color:#a5a5ad}
+    
+    /* Sticky mobile call bar */
+    .sticky-call{
+      position:fixed;z-index:60;inset:auto 16px 16px;
+      display:flex;justify-content:center;animation:fadeInUp 0.5s ease-out;
+    }
+    .sticky-call a{
+      display:inline-flex;gap:10px;align-items:center;
+      background:var(--red);color:#fff;padding:14px 20px;
+      border-radius:999px;box-shadow:var(--shadow);
+      font-weight:800;font-size:16px;
+      transition:all 0.3s ease;
+    }
+    .sticky-call a:hover { transform: translateY(-3px) scale(1.05); }
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    
+    /* Desktop optimizations */
+    @media (min-width:768px){
+      .container{padding:0 32px}
+      .hero{padding:60px 0 40px}
+      .hero-inner{grid-template-columns:1.1fr .9fr;gap:40px}
+      .grid3{grid-template-columns:repeat(3,1fr);gap:16px}
+      .headline{font-size:48px;margin:8px 0 16px}
+      .sub{font-size:18px;margin-bottom:24px}
+      .hero-card{padding:24px}
+      .pill{padding:16px;font-size:inherit}
+      .badge{padding:10px 16px;margin-bottom:20px;font-size:inherit}
+      .section-title{font-size:32px;margin:0 0 24px}
+      .cards{grid-template-columns:repeat(2,1fr);gap:20px}
+      .card{padding:20px;min-height:140px;gap:12px}
+      .card h3{font-size:18px}
+      .muted{font-size:inherit}
+      .reviews-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+      .review{padding:20px;margin-bottom:16px}
+      .review h4{font-size:16px;margin:0 0 6px}
+      .review .meta{font-size:13px;margin-bottom:8px}
+      .review .body{font-size:inherit}
+      .contact{grid-template-columns:1fr 1fr;gap:32px}
+      form{padding:24px}
+      label{margin:16px 0 8px;font-size:inherit}
+      input, textarea, select{padding:14px}
+      button[type="submit"]{margin-top:16px;padding:14px 20px;width:auto}
+      iframe.map{min-height:380px}
+      section{padding:60px 0}
+      .footer-grid{grid-template-columns:1fr 1fr 1fr;gap:24px}
+      .sticky-call{display:none}
+      .topbar{padding:16px 0;gap:24px;flex-wrap:nowrap}
+      .brand{gap:16px}
+      .logo{width:48px;height:48px;border-radius:12px}
+      .logo svg{width:28px;height:28px}
+      .brand h1{font-size:22px}
+      .brand .tiny{font-size:inherit}
+      .cta{gap:16px}
+      .call-btn, .book-btn{padding:14px 20px;font-size:18px;gap:12px}
+    }
+
+    @media (min-width:1000px){
+      .cards{grid-template-columns:repeat(3,1fr)}
+      .reviews-grid{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media (min-width:1200px){
+      .cards{grid-template-columns:repeat(6,1fr)}
+    }
     /* Header */
     header{
       position:sticky;top:0;z-index:50;
