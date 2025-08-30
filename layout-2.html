@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neighborhood Motors – Layout 2 Card Stack</title>
+  <meta name="description" content="Neighborhood Motors in Tulsa, OK. Auto Glass, Full Service Auto Repair, Collision, Upholstery, Auto Electric, Towing & Roadside. Call now: +1 (213) 705-6862." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --red:#d90429;
+      --red-600:#b40322;
+      --black:#0f0f10;
+      --gray-900:#18181b;
+      --white:#ffffff;
+      --radius:20px;
+      --shadow:0 10px 40px rgba(0,0,0,.3);
+      --glow:0 0 30px rgba(217,4,41,.2);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--black);color:var(--white);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6}
+    .container{max-width:100%;margin:0 auto;padding:0 16px}
+    
+    /* Header - Floating */
+    header{
+      position:fixed;
+      top:16px;
+      left:16px;
+      right:16px;
+      z-index:100;
+      background:rgba(15,15,16,.95);
+      backdrop-filter:blur(20px);
+      border:1px solid #2a2a30;
+      border-radius:16px;
+      padding:12px 20px;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo{
+      width:32px;
+      height:32px;
+      background:linear-gradient(45deg,var(--red),#ff4966);
+      border-radius:8px;
+      display:grid;
+      place-items:center;
+    }
+    .logo svg{width:18px;height:18px;fill:var(--white)}
+    .brand h1{
+      margin:0;
+      font-size:15px;
+      font-weight:800;
+    }
+    .call-btn{
+      background:var(--red);
+      color:var(--white);
+      padding:8px 16px;
+      border-radius:20px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:13px;
+    }
+    
+    /* Hero Card */
+    .hero{
+      padding:100px 0 40px;
+      display:flex;
+      align-items:center;
+      min-height:100vh;
+    }
+    .hero-card{
+      background:linear-gradient(145deg, #151519 0%, #1a1a1f 100%);
+      border:1px solid #2a2a30;
+      border-radius:var(--radius);
+      padding:40px 24px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      left:-50%;
+      width:200%;
+      height:200%;
+      background:radial-gradient(circle, rgba(217,4,41,.1) 0%, transparent 70%);
+      animation:rotate 20s linear infinite;
+    }
+    @keyframes rotate{
+      from{transform:rotate(0deg)}
+      to{transform:rotate(360deg)}
+    }
+    .hero-content{position:relative;z-index:2}
+    .badge{
+      display:inline-block;
+      background:rgba(217,4,41,.1);
+      border:1px solid rgba(217,4,41,.3);
+      color:var(--red);
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:11px;
+      font-weight:600;
+      margin-bottom:20px;
+    }
+    .hero-title{
+      font-size:32px;
+      font-weight:800;
+      line-height:1.1;
+      margin:0 0 16px;
+      background:linear-gradient(135deg,var(--white),#ccc);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .hero-subtitle{
+      font-size:16px;
+      opacity:0.8;
+      margin-bottom:24px;
+      line-height:1.5;
+    }
+    .cta-buttons{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .btn-primary{
+      background:linear-gradient(45deg,var(--red),#ff4966);
+      color:var(--white);
+      padding:16px 24px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:16px;
+      box-shadow:var(--glow);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--white);
+      border:1px solid #2a2a30;
+      padding:16px 24px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:16px;
+    }
+    
+    /* Info Cards Stack */
+    .info-stack{
+      padding:20px 0;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .info-card{
+      background:linear-gradient(145deg, #151519 0%, #1a1a1f 100%);
+      border:1px solid #2a2a30;
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 8px 25px rgba(0,0,0,.2);
+    }
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:14px;
+      font-weight:600;
+      color:var(--red);
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    .info-card .value{
+      font-size:18px;
+      font-weight:700;
+      margin:0;
+    }
+    .info-card a{
+      color:var(--white);
+      text-decoration:none;
+    }
+    
+    /* Services Cards */
+    .services{
+      padding:40px 0;
+    }
+    .section-title{
+      font-size:28px;
+      font-weight:800;
+      text-align:center;
+      margin:0 0 32px;
+      background:linear-gradient(135deg,var(--white),#ccc);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .service-cards{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .service-card{
+      background:linear-gradient(145deg, #151519 0%, #1a1a1f 100%);
+      border:1px solid #2a2a30;
+      border-radius:var(--radius);
+      padding:24px;
+      position:relative;
+      overflow:hidden;
+      transition:all 0.3s ease;
+    }
+    .service-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(217,4,41,.1), transparent);
+      transition:all 0.5s;
+    }
+    .service-card:active::before{
+      left:100%;
+    }
+    .service-card h3{
+      margin:0 0 8px;
+      font-size:20px;
+      font-weight:700;
+      color:var(--red);
+    }
+    .service-card p{
+      margin:0;
+      font-size:14px;
+      opacity:0.8;
+      line-height:1.5;
+    }
+    .service-icon{
+      width:40px;
+      height:40px;
+      background:rgba(217,4,41,.1);
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:12px;
+      font-size:20px;
+    }
+    
+    /* Reviews Card */
+    .reviews{
+      padding:40px 0;
+      background:linear-gradient(180deg, var(--black) 0%, #0a0a0b 100%);
+    }
+    .reviews-card{
+      background:linear-gradient(145deg, #151519 0%, #1a1a1f 100%);
+      border:1px solid #2a2a30;
+      border-radius:var(--radius);
+      padding:32px 24px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+    .rating-display{
+      margin-bottom:24px;
+    }
+    .stars{
+      display:flex;
+      justify-content:center;
+      gap:4px;
+      margin-bottom:8px;
+    }
+    .star{
+      width:24px;
+      height:24px;
+      fill:var(--red);
+    }
+    .rating-text{
+      font-size:20px;
+      font-weight:700;
+      margin:0;
+    }
+    .review-item{
+      background:rgba(0,0,0,.3);
+      border-radius:12px;
+      padding:20px;
+      margin:16px 0;
+      text-align:left;
+    }
+    .review-item h4{
+      margin:0 0 4px;
+      font-size:16px;
+      font-weight:600;
+    }
+    .review-item .meta{
+      font-size:12px;
+      opacity:0.6;
+      margin-bottom:8px;
+    }
+    .review-item .body{
+      font-size:14px;
+      line-height:1.5;
+    }
+    
+    /* Contact Card */
+    .contact{
+      padding:40px 0 120px;
+    }
+    .contact-card{
+      background:linear-gradient(145deg, #151519 0%, #1a1a1f 100%);
+      border:1px solid #2a2a30;
+      border-radius:var(--radius);
+      padding:32px 24px;
+      box-shadow:var(--shadow);
+    }
+    .form-title{
+      font-size:24px;
+      font-weight:800;
+      margin:0 0 24px;
+      text-align:center;
+    }
+    .form-group{
+      margin-bottom:20px;
+    }
+    label{
+      display:block;
+      margin-bottom:6px;
+      font-weight:600;
+      font-size:14px;
+      color:var(--red);
+    }
+    input,textarea,select{
+      width:100%;
+      padding:14px;
+      background:rgba(0,0,0,.3);
+      border:1px solid #2a2a30;
+      border-radius:12px;
+      color:var(--white);
+      font-size:16px;
+      transition:all 0.3s ease;
+    }
+    input:focus,textarea:focus,select:focus{
+      outline:none;
+      border-color:var(--red);
+      box-shadow:0 0 0 3px rgba(217,4,41,.1);
+    }
+    .submit-btn{
+      background:linear-gradient(45deg,var(--red),#ff4966);
+      color:var(--white);
+      border:none;
+      padding:16px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:16px;
+      width:100%;
+      box-shadow:var(--glow);
+    }
+    
+    /* Map Card */
+    .map-card{
+      background:linear-gradient(145deg, #151519 0%, #1a1a1f 100%);
+      border:1px solid #2a2a30;
+      border-radius:var(--radius);
+      padding:24px;
+      margin-top:20px;
+      box-shadow:0 8px 25px rgba(0,0,0,.2);
+    }
+    .map-card h3{
+      margin:0 0 16px;
+      font-size:20px;
+      font-weight:700;
+      text-align:center;
+    }
+    iframe{
+      width:100%;
+      height:250px;
+      border-radius:12px;
+      border:none;
+    }
+    
+    /* Sticky Call - Enhanced */
+    .sticky-call{
+      position:fixed;
+      bottom:20px;
+      left:16px;
+      right:16px;
+      z-index:100;
+    }
+    .sticky-call a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      background:linear-gradient(45deg,var(--red),#ff4966);
+      color:var(--white);
+      padding:18px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:16px;
+      box-shadow:0 8px 30px rgba(217,4,41,.4);
+      animation:pulse-glow 2s ease-in-out infinite;
+    }
+    @keyframes pulse-glow{
+      0%,100%{box-shadow:0 8px 30px rgba(217,4,41,.4)}
+      50%{box-shadow:0 8px 40px rgba(217,4,41,.6)}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">
+          <svg viewBox="0 0 24 24"><path d="M22 19.59 18.42 16a5.5 5.5 0 0 1-7.78-7.78L8 5.59 5.59 8l2.63 2.64a5.5 5.5 0 0 0 7.78 7.78L19.59 22 22 19.59z"></path></svg>
+        </div>
+        <h1>Neighborhood Motors</h1>
+      </div>
+      <a class="call-btn" href="tel:+12137056862">Call</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-content">
+          <div class="badge">🔧 PROFESSIONAL AUTO REPAIR</div>
+          <h1 class="hero-title">Your Trusted Auto Experts in Tulsa</h1>
+          <p class="hero-subtitle">From auto glass to collision repair - we handle it all with precision, care, and years of experience.</p>
+          <div class="cta-buttons">
+            <a href="tel:+12137056862" class="btn-primary">📞 Call Now: (213) 705-6862</a>
+            <a href="#contact" class="btn-secondary">📧 Get Free Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-stack">
+    <div class="container">
+      <div class="info-card">
+        <h3>📍 Location</h3>
+        <p class="value">1023 E 6th St, Tulsa, OK 74120</p>
+      </div>
+      
+      <div class="info-card">
+        <h3>⏰ Hours</h3>
+        <p class="value">Mon-Thu: 10 AM–9 PM<br>Fri: 10 AM–10 PM • Sat: 11 AM–10 PM<br>Sun: 1–7 PM</p>
+      </div>
+      
+      <div class="info-card">
+        <h3>📱 Contact</h3>
+        <p class="value">
+          <a href="tel:+12137056862">📞 (213) 705-6862</a><br>
+          <a href="https://www.instagram.com/neighborhoodmotorsautogroup">📸 Instagram</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Our Expert Services</h2>
+      <div class="service-cards">
+        <div class="service-card">
+          <div class="service-icon">🚗</div>
+          <h3>Auto Glass</h3>
+          <p>Expert windshield repair and replacement, chip repair, and ADAS calibration services.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🚛</div>
+          <h3>Towing & Roadside</h3>
+          <p>24/7 emergency services including jump starts, tire changes, and lockout assistance.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Full Service Repair</h3>
+          <p>Complete automotive repair including brakes, suspension, engine work, and A/C service.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Auto Electric</h3>
+          <p>Advanced diagnostics, battery replacement, alternator repair, and electrical troubleshooting.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🔨</div>
+          <h3>Collision Repair</h3>
+          <p>Professional body work, bumper repair, panel replacement, and frame straightening.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🪑</div>
+          <h3>Upholstery Repair</h3>
+          <p>Interior restoration including seat repair, headliner replacement, and custom stitching.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="reviews-card">
+        <div class="rating-display">
+          <div class="stars">
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="rating-text">4.6 ★ Average • 21 Reviews</p>
+        </div>
+        
+        <div class="review-item">
+          <h4>Nicci Johnson ⭐⭐⭐⭐⭐</h4>
+          <div class="meta">5 reviews • a month ago</div>
+          <div class="body">"They fixed my 2011 Edge windshield... They were amazing 👏.... they were kind ....clean and cool place to wait ...and best priced compared to 5 other companies.... they are awesome 👌"</div>
+        </div>
+        
+        <div class="review-item">
+          <h4>Alana Wilson ⭐⭐⭐⭐⭐</h4>
+          <div class="meta">8 reviews • a year ago</div>
+          <div class="body">"Great experience with this auto shop. They are very understanding, have great communication, and great prices. They even offered to deliver my car to me.."</div>
+        </div>
+        
+        <div class="review-item">
+          <h4>Mason Pollay ⭐⭐⭐⭐⭐</h4>
+          <div class="meta">13 reviews • 5 months ago</div>
+          <div class="body">"Great guy! Super quick! Got my car in and out in a day! Definitely recommend!!"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <h2 class="form-title">Get Your Free Quote</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" placeholder="Enter your full name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="your@email.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="(555) 123-4567">
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="auto-glass">Auto Glass</option>
+              <option value="towing">Towing & Roadside</option>
+              <option value="repair">Full Service Auto Repair</option>
+              <option value="electric">Auto Electric</option>
+              <option value="collision">Collision Repair</option>
+              <option value="upholstery">Upholstery Repair</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Tell Us About Your Vehicle & Issue</label>
+            <textarea id="message" name="message" rows="4" placeholder="Describe what you need help with..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">🚀 Get My Free Quote</button>
+        </form>
+      </div>
+      
+      <div class="map-card">
+        <h3>📍 Visit Our Shop</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <div class="sticky-call">
+    <a href="tel:+12137056862">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C11.4 22 2 12.6 2 1a1 1 0 0 1 1-1h4.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/></svg>
+      📞 Call Now
+    </a>
+  </div>
+</body>
+</html>
