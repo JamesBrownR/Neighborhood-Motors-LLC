@@ -7,6 +7,8 @@
   <meta name="description" content="Neighborhood Motors in Tulsa, OK. Auto Glass, Full Service Auto Repair, Collision, Upholstery, Auto Electric, Towing & Roadside. Call now: +1 (213) 705-6862.">
   
   <!-- Tailwind CSS -->
+  <!-- IMPORTANT: This site relies on an external script from Tailwind CSS to apply styles. -->
+  <!-- If styles are missing, ensure your internet connection is active and scripts from cdn.tailwindcss.com are not blocked. -->
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Google Fonts -->
@@ -378,5 +380,31 @@
     });
   </script>
 
+  <!-- Style-loading Diagnostic Script -->
+  <script>
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const testEl = document.createElement('div');
+            testEl.className = 'hidden'; // A standard Tailwind utility class
+            document.body.appendChild(testEl);
+
+            // Check if the 'hidden' class is working as expected
+            const isTailwindLoaded = getComputedStyle(testEl).display === 'none';
+            document.body.removeChild(testEl);
+
+            if (!isTailwindLoaded) {
+                const warningBanner = document.createElement('div');
+                warningBanner.innerHTML = `
+                    <div style="position: sticky; top: 0; left: 0; width: 100%; z-index: 9999; background-color: #ef4444; color: white; padding: 1rem; text-align: center; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <strong>Styling Error:</strong> The website's styles (from Tailwind CSS) failed to load. Please check your internet connection and ensure scripts from <strong>cdn.tailwindcss.com</strong> are not blocked. If you are viewing this as a raw file from a git repository, it will not work correctly. You need to serve it through a web server, like GitHub Pages.
+                    </div>
+                `;
+                document.body.prepend(warningBanner);
+            }
+        }, 500); // Wait 500ms for the CDN script to potentially load
+    });
+  </script>
+
 </body>
 </html>
+
