@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <title>Neighborhood Motors — Alternate Layout</title>
   <meta name="description" content="Neighborhood Motors in Tulsa, OK. Auto Glass, Full Service Auto Repair, Collision, Upholstery, Auto Electric, Towing & Roadside. Call now: +1 (213) 705-6862." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -21,65 +23,84 @@
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:var(--mono);background:var(--bg);color:#0f172a}
     a{color:var(--accent);text-decoration:none}
-    .wrap{max-width:var(--maxw);margin:24px auto;padding:16px;display:grid;grid-template-columns:260px 1fr 380px;gap:20px;align-items:start}
-    /* mobile fallback: single column */
-    @media (max-width:1000px){ .wrap{grid-template-columns:1fr; padding:12px} .right, .left{order:2} .center{order:1} }
+    .wrap{max-width:var(--maxw);margin:24px auto;padding:16px;display:grid;grid-template-columns:260px 1fr 380px;gap:24px;align-items:start}
+    /* mobile: single column, larger gap, more padding */
+    @media (max-width:1024px){
+      .wrap{grid-template-columns:1fr;padding:16px;gap:16px}
+      .right, .left{order:2}
+      .center{order:1}
+      .left, .right{position:static} /* Remove sticky for mobile */
+    }
+    @media (max-width:768px){
+      .wrap{padding:12px;gap:12px}
+    }
 
     /* LEFT: slim info column */
-    .left{position:sticky;top:18px}
-    .brand-card, .info-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px}
-    .logo-circle{width:56px;height:56px;border-radius:12px;background:var(--accent);display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px;margin-right:12px;flex:0 0 auto}
+    .left{}
+    .brand-card, .info-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin-bottom:16px}
+    .logo-circle{width:60px;height:60px;border-radius:12px;background:var(--accent);display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;margin-right:12px;flex:0 0 auto}
     .brand-row{display:flex;align-items:center;gap:12px}
-    .tiny{color:var(--muted);font-size:13px}
-    .phone{display:inline-flex;align-items:center;gap:8px;font-weight:700;margin-top:10px}
-    .cta-btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;font-weight:800;margin-top:12px;box-shadow:0 8px 18px rgba(217,4,41,.15)}
-    .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-    .pill{background:#fbfcfd;padding:10px;border-radius:10px;border:1px solid #eef2f6;font-size:14px}
+    .tiny{color:var(--muted);font-size:14px}
+    .phone{display:inline-flex;align-items:center;gap:8px;font-weight:700;margin-top:12px;font-size:18px}
+    .cta-btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;font-weight:800;margin-top:14px;box-shadow:0 8px 18px rgba(217,4,41,.15);min-height:48px;min-width:48px} /* Larger touch target */
+    .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+    .pill{background:#fbfcfd;padding:12px;border-radius:10px;border:1px solid #eef2f6;font-size:15px}
 
     /* CENTER: main content */
     .center{min-height:200px}
-    .hero{background:linear-gradient(180deg,#fff,#fbfbfd);padding:22px;border-radius:18px;box-shadow:var(--shadow);display:flex;gap:18px;align-items:center}
-    .hero-text h1{margin:0;font-size:22px}
-    .hero-text p{margin:8px 0 0;color:var(--muted)}
-    .hero-side{margin-left:auto;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
-    .book-link{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:8px 12px;border-radius:10px;font-weight:800}
+    .hero{background:linear-gradient(180deg,#fff,#fbfbfd);padding:24px;border-radius:18px;box-shadow:var(--shadow);display:flex;gap:20px;align-items:center}
+    @media (max-width:768px){
+      .hero{flex-direction:column;align-items:stretch}
+      .hero-side{align-items:center}
+    }
+    .hero-text h1{margin:0;font-size:24px}
+    .hero-text p{margin:10px 0 0;color:var(--muted);font-size:16px}
+    .hero-side{margin-left:auto;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+    .book-link{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:10px 14px;border-radius:10px;font-weight:800;min-height:48px;display:flex;align-items:center;justify-content:center}
 
     /* Services ribbon */
     .services{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
-    .service-tag{background:linear-gradient(180deg,#fff,#fcfcfd);border-radius:12px;padding:10px 12px;border:1px solid #eef2f6;box-shadow:0 4px 12px rgba(16,24,40,.03);font-weight:600}
+    .service-tag{background:linear-gradient(180deg,#fff,#fcfcfd);border-radius:12px;padding:12px;border:1px solid #eef2f6;box-shadow:0 4px 12px rgba(16,24,40,.03);font-weight:600;font-size:15px}
 
-    /* services grid */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-    @media (max-width:1200px){ .cards{grid-template-columns:repeat(2,1fr)} }
+    /* Services grid */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+    @media (max-width:1024px){ .cards{grid-template-columns:repeat(2,1fr)} }
     @media (max-width:600px){ .cards{grid-template-columns:1fr} }
-    .card{background:var(--card);padding:16px;border-radius:12px;border:1px solid #eef2f6;box-shadow:0 6px 18px rgba(16,24,40,.04)}
-    .card h3{margin:0 0 6px;font-size:16px}
-    .muted{color:var(--muted);font-size:14px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid #eef2f6;box-shadow:0 6px 18px rgba(16,24,40,.04)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .muted{color:var(--muted);font-size:15px}
 
-    /* Reviews column (wide) */
-    .reviews-section{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow);margin-top:16px}
+    /* Reviews column */
+    .reviews-section{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin-top:16px}
     .rating-row{display:flex;gap:12px;align-items:center}
     .stars{display:flex;gap:4px}
-    .reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
-    @media (max-width:1000px){ .reviews-grid{grid-template-columns:1fr} }
-    .review{background:#fff;border-radius:10px;padding:12px;border:1px solid #f1f5f9}
-    .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
-    .body{white-space:pre-wrap;color:#0b1220;font-size:14px}
+    .reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+    @media (max-width:1024px){ .reviews-grid{grid-template-columns:1fr} }
+    .review{background:#fff;border-radius:10px;padding:14px;border:1px solid #f1f5f9}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+    .body{white-space:pre-wrap;color:#0b1220;font-size:15px}
 
     /* RIGHT: booking/map column */
-    .right{position:sticky;top:18px}
-    .booking{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:16px}
-    form label{display:block;margin-top:10px;font-weight:700;font-size:13px}
-    input, select, textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #eef2f6;margin-top:6px;font-size:14px}
-    button[type="submit"]{margin-top:12px;background:var(--accent);color:#fff;padding:10px 12px;border-radius:10px;border:none;font-weight:800;width:100%}
-    .map-frame{width:100%;height:260px;border-radius:12px;border:1px solid #eef2f6}
+    .right{}
+    .booking{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:16px}
+    form label{display:block;margin-top:12px;font-weight:700;font-size:14px}
+    input, select, textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #eef2f6;margin-top:8px;font-size:16px;min-height:48px}
+    button[type="submit"]{margin-top:14px;background:var(--accent);color:#fff;padding:12px;border-radius:10px;border:none;font-weight:800;width:100%;min-height:48px}
+    .map-frame{width:100%;height:300px;border-radius:12px;border:1px solid #eef2f6}
+    @media (max-width:768px){
+      .map-frame{height:240px}
+    }
 
-    /* footer */
-    footer{max-width:var(--maxw);margin:20px auto;padding:10px 16px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    /* Footer */
+    footer{max-width:var(--maxw);margin:24px auto;padding:12px 16px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+    @media (max-width:768px){
+      footer{flex-direction:column;gap:12px;text-align:center}
+    }
     .small{color:var(--muted)}
-    /* little util */
-    .kicker{display:inline-block;background:#fff;padding:6px 8px;border-radius:999px;border:1px solid #eef2f6;font-weight:700}
-    .divider{height:1px;background:#eef2f6;margin:16px 0;border-radius:2px}
+
+    /* Utilities */
+    .kicker{display:inline-block;background:#fff;padding:8px 10px;border-radius:999px;border:1px solid #eef2f6;font-weight:700;font-size:14px}
+    .divider{height:1px;background:#eef2f6;margin:18px 0;border-radius:2px}
   </style>
 </head>
 <body>
@@ -92,23 +113,23 @@
         <div class="brand-row">
           <div class="logo-circle" aria-hidden="true">NM</div>
           <div>
-            <div id="brand-title" style="font-weight:800">Neighborhood Motors</div>
+            <div id="brand-title" style="font-weight:800;font-size:18px">Neighborhood Motors</div>
             <div class="tiny">Auto Glass • Collision • Full Service Auto Repair</div>
           </div>
         </div>
 
-        <div class="phone"><span style="font-size:18px">+1 (213) 705-6862</span></div>
+        <div class="phone"><span style="font-size:20px">+1 (213) 705-6862</span></div>
         <a class="cta-btn" href="#booking">Book Online</a>
 
-        <div style="margin-top:12px" class="tiny">Address</div>
-        <div class="pill" style="margin-top:8px">
+        <div style="margin-top:14px" class="tiny">Address</div>
+        <div class="pill" style="margin-top:10px">
           1023 E 6th St<br>Tulsa, OK 74120
         </div>
       </div>
 
       <div class="info-card" role="region" aria-labelledby="hours-title">
-        <div id="hours-title" style="font-weight:800">Hours</div>
-        <div class="hours-grid" aria-hidden="false" style="margin-top:8px">
+        <div id="hours-title" style="font-weight:800;font-size:18px">Hours</div>
+        <div class="hours-grid" aria-hidden="false" style="margin-top:10px">
           <div class="pill"><b>Mon–Thu</b><br>10 AM–9 PM</div>
           <div class="pill"><b>Fri</b><br>10 AM–10 PM</div>
           <div class="pill"><b>Sat</b><br>11 AM–10 PM</div>
@@ -117,8 +138,8 @@
           <div class="pill"><b>After-hours</b><br>By appointment</div>
         </div>
 
-        <div style="margin-top:12px" class="tiny">Instagram</div>
-        <div style="margin-top:8px"><a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener">@neighborhoodmotorsautogroup</a></div>
+        <div style="margin-top:14px" class="tiny">Instagram</div>
+        <div style="margin-top:10px"><a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener">@neighborhoodmotorsautogroup</a></div>
       </div>
     </aside>
 
@@ -127,7 +148,7 @@
       <!-- Hero -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-text">
-          <h1 id="hero-title">Auto Glass, Collision & Full Service Auto Repair — <span style="color:var(--accent)">Done Right</span></h1>
+          <h1 id="hero-title" style="font-size:26px">Auto Glass, Collision & Full Service Auto Repair — <span style="color:var(--accent)">Done Right</span></h1>
           <p>Auto Glass 🚗 • Towing & Roadside Services 🪝 • Full Service Auto Repair 🔧 🧰 • Auto Electric 🚘 🛠️ • Collision Repair 💥🚗🛻 • Auto Upholstery Repair 🪡</p>
 
           <div class="services" aria-hidden="false">
@@ -143,16 +164,16 @@
         <div class="hero-side" aria-hidden="false">
           <div style="text-align:right">
             <div class="kicker">Open Today</div>
-            <div class="tiny" style="margin-top:8px">See hours below</div>
+            <div class="tiny" style="margin-top:10px">See hours below</div>
           </div>
           <a class="book-link" href="#booking">Book Online</a>
-          <a style="margin-top:8px" href="tel:+12137056862" class="book-link">Call +1 (213) 705-6862</a>
+          <a style="margin-top:10px" href="tel:+12137056862" class="book-link">Call +1 (213) 705-6862</a>
         </div>
       </section>
 
       <!-- SERVICES grid (cards) -->
-      <section aria-labelledby="services-title" style="margin-top:18px">
-        <h2 id="services-title" style="margin:0;font-size:18px;font-weight:800">Services</h2>
+      <section aria-labelledby="services-title" style="margin-top:20px">
+        <h2 id="services-title" style="margin:0;font-size:20px;font-weight:800">Services</h2>
         <div class="cards" role="list">
           <div class="card" role="listitem"><h3>Auto Glass</h3><div class="muted">Chip repair • Windshields • Calibration</div></div>
           <div class="card" role="listitem"><h3>Towing & Roadside</h3><div class="muted">Jump starts • Tire change • Lockouts</div></div>
@@ -167,36 +188,34 @@
       <section class="reviews-section" aria-labelledby="reviews-title" id="reviews">
         <div style="display:flex;justify-content:space-between;align-items:center">
           <div>
-            <h3 id="reviews-title" style="margin:0;font-size:16px;font-weight:800">Customer Reviews</h3>
-            <div class="tiny" style="margin-top:6px">What people say about Neighborhood Motors</div>
+            <h3 id="reviews-title" style="margin:0;font-size:18px;font-weight:800">Customer Reviews</h3>
+            <div class="tiny" style="margin-top:8px">What people say about Neighborhood Motors</div>
           </div>
           <div class="rating-row">
             <div class="stars" aria-hidden="true">
-              <!-- static star SVGs -->
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="g2"><stop offset="60%" stop-color="currentColor"/><stop offset="60%" stop-color="#d1d5db"/></linearGradient></defs><path fill="url(#g2)" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="g2"><stop offset="60%" stop-color="currentColor"/><stop offset="60%" stop-color="#d1d5db"/></linearGradient></defs><path fill="url(#g2)" d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             </div>
-            <div style="margin-left:8px;font-weight:800">4.6</div>
+            <div style="margin-left:10px;font-weight:800;font-size:16px">4.6</div>
           </div>
         </div>
 
         <div class="divider"></div>
 
         <div id="reviewsGrid" class="reviews-grid" aria-live="polite"></div>
-        <div style="margin-top:12px;text-align:center">
-          <button id="showMoreBtn" style="background:#fff;border:1px solid #eef2f6;padding:10px 12px;border-radius:10px;font-weight:700">Show more</button>
+        <div style="margin-top:14px;text-align:center">
+          <button id="showMoreBtn" style="background:#fff;border:1px solid #eef2f6;padding:12px 14px;border-radius:10px;font-weight:700;min-height:48px">Show more</button>
         </div>
       </section>
-
     </main>
 
     <!-- RIGHT column: booking + map -->
     <aside class="right" aria-label="Booking and map">
       <div class="booking" id="booking">
-        <h3 style="margin:0 0 8px;font-size:16px;font-weight:800">Email Us</h3>
+        <h3 style="margin:0 0 10px;font-size:18px;font-weight:800">Email Us</h3>
         <form id="contactForm">
           <input type="hidden" name="_subject" value="Website Inquiry – Neighborhood Motors">
           <label for="name">Name</label>
@@ -216,29 +235,26 @@
             <option>Other</option>
           </select>
           <label for="msg">Message</label>
-          <textarea id="msg" name="message" rows="4" placeholder="Tell us what you need"></textarea>
+          <textarea id="msg" name="message" rows="5" placeholder="Tell us what you need"></textarea>
           <button type="submit">Send Message</button>
-          <div class="tiny" style="margin-top:10px">Prefer to call? <a href="tel:+12137056862">Tap here</a>.</div>
+          <div class="tiny" style="margin-top:12px">Prefer to call? <a href="tel:+12137056862">Tap here</a>.</div>
         </form>
       </div>
 
       <div class="booking" aria-hidden="false">
-        <h4 style="margin:0 0 8px;font-size:15px;font-weight:800">Find Us</h4>
-        <!-- same live map iframe (kept exactly) -->
+        <h4 style="margin:0 0 10px;font-size:16px;font-weight:800">Find Us</h4>
         <iframe class="map-frame" loading="lazy" allowfullscreen=""
           referrerpolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
 
-        <div style="margin-top:12px" class="pill"><b>Neighborhood Motors</b><br>1023 E 6th St, Tulsa, OK 74120</div>
+        <div style="margin-top:14px" class="pill"><b>Neighborhood Motors</b><br>1023 E 6th St, Tulsa, OK 74120</div>
 
-        <div style="margin-top:12px" class="tiny">
+        <div style="margin-top:14px" class="tiny">
           <b>Online Booking (Square)</b>
-          <div id="square-booking" data-square-location="YOUR_LOCATION_ID" style="margin-top:8px"></div>
+          <div id="square-booking" data-square-location="YOUR_LOCATION_ID" style="margin-top:10px"></div>
         </div>
       </div>
-
     </aside>
-
   </div>
 
   <footer>
@@ -247,7 +263,6 @@
   </footer>
 
   <script>
-    // keep same reviews array text exactly as provided in your original file
     const REVIEWS = [
       {name:'Nicci Johnson', stars:5, meta:'5 reviews · 1 photo • a month ago', body:`Omg !!! They fixed my 2011 Edge windshield....My hood came unlatched on the highway and bam!!!! They were amazing 👏.... they were kind ....clean and cool place to wait ...and best priced compared to 5 other companies.... they are awesome 👌 …`},
       {name:'Alana Wilson', stars:5, meta:'8 reviews · 1 photo • a year ago', body:`I've had a great experience with this auto shop.
@@ -282,7 +297,6 @@ Happy to help Stefan!`},
       {name:'Giovana Flores', stars:1, meta:'4 reviews • 2 years ago', body:``}
     ];
 
-    // append reviews progressively
     const grid = document.getElementById('reviewsGrid');
     const btn = document.getElementById('showMoreBtn');
     const BATCH = 6;
@@ -290,7 +304,7 @@ Happy to help Stefan!`},
 
     function starHTML(count){
       return Array.from({length:5}).map((_,i)=> {
-        return `<svg width="14" height="14" viewBox="0 0 24 24" fill="${i < count ? 'currentColor' : '#e6e9ee'}" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`;
+        return `<svg width="16" height="16" viewBox="0 0 24 24" fill="${i < count ? 'currentColor' : '#e6e9ee'}" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`;
       }).join('');
     }
 
@@ -302,12 +316,12 @@ Happy to help Stefan!`},
         el.innerHTML = `
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <div>
-              <div style="font-weight:800">${r.name}</div>
+              <div style="font-weight:800;font-size:16px">${r.name}</div>
               <div class="meta">${r.meta}</div>
             </div>
             <div style="text-align:right">${starHTML(r.stars)}</div>
           </div>
-          <div class="body" style="margin-top:10px">${r.body}</div>
+          <div class="body" style="margin-top:12px">${r.body}</div>
         `;
         grid.appendChild(el);
       });
@@ -324,10 +338,8 @@ Happy to help Stefan!`},
     btn.addEventListener('click', renderNext);
     renderNext();
 
-    // Current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Contact form: mailto default (as original file)
     document.getElementById('contactForm').addEventListener('submit', function(e){
       e.preventDefault();
       const form = e.currentTarget;
@@ -342,7 +354,6 @@ Happy to help Stefan!`},
       }
     });
 
-    // schema.org script: mirror original data for SEO
     const schema = {
       '@context':'https://schema.org',
       '@type':'AutoRepair',
@@ -365,6 +376,5 @@ Happy to help Stefan!`},
     ld.textContent = JSON.stringify(schema);
     document.head.appendChild(ld);
   </script>
-
 </body>
 </html>
