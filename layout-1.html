@@ -63,7 +63,7 @@
     /* Initially hidden for animations */
     .hero-inner > div:first-child { opacity: 0; }
     .hero-inner > div:last-child { opacity: 0; }
-    .service-card { opacity: 0; transform: translateY(30px); }
+    .service-card { opacity: 1; transform: none; } /* Ensure visibility by default */
     .gallery img { opacity: 0; transform: scale(0.95); }
     .review { opacity: 0; transform: translateY(20px); }
 
@@ -455,7 +455,8 @@
             If you have the Square Web Payments/Bookings widget, paste it here.
           -->
           <div id="square-booking" data-square-location="YOUR_LOCATION_ID"></div>
-          <div class="tiny"><!-- Implementation note: insert Square appointment embed script for your account and use data-square-location -->
+          <div class="tiny">
+            <!-- Implementation note: insert Square appointment embed script for your account and use data-square-location -->
             <!-- Example placeholder – keep for dev reference only -->
             <!-- <script src="https://web.squarecdn.com/v1/square.js" async></script> -->
           </div>
@@ -501,23 +502,30 @@
       rootMargin: '0px 0px -50px 0px'
     };
 
+    const servicesObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
+          setTimeout(() => {
+            entry.target.classList.add('animate-fade-in-up');
+          }, delay);
+          servicesObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          if (entry.target.classList.contains('service-card')) {
+          if (entry.target.classList.contains('review')) {
             const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
             setTimeout(() => {
-              entry.target.style.animation = `fadeInUp 0.6s ease-out forwards`;
+              entry.target.style.animation = `fadeInUp 0.5s ease-out forwards`;
             }, delay);
           } else if (entry.target.tagName === 'IMG') {
             const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 150;
             setTimeout(() => {
               entry.target.style.animation = `fadeInUp 0.6s ease-out forwards`;
-            }, delay);
-          } else if (entry.target.classList.contains('review')) {
-            const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
-            setTimeout(() => {
-              entry.target.style.animation = `fadeInUp 0.5s ease-out forwards`;
             }, delay);
           }
           observer.unobserve(entry.target);
@@ -634,7 +642,7 @@ Happy to help Stefan!`},
     document.addEventListener('DOMContentLoaded', () => {
       // Observe service cards
       document.querySelectorAll('.service-card').forEach(card => {
-        observer.observe(card);
+        servicesObserver.observe(card);
       });
     });
 
