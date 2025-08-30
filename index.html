@@ -61,8 +61,14 @@
       z-index: 999;
     }
     
-    /* Default content before layout selection */
+    /* Content container that will hold the loaded layouts */
     #content {
+      min-height: 100vh;
+      width: 100%;
+    }
+    
+    /* Default welcome content */
+    .welcome-content {
       padding: 80px 20px 40px;
       text-align: center;
       max-width: 600px;
@@ -99,6 +105,7 @@
       padding: 20px;
       text-align: left;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
     
     .layout-preview-card:hover {
@@ -147,19 +154,27 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
+    /* Ensure loaded content displays properly */
+    .loaded-layout {
+      width: 100%;
+      min-height: 100vh;
+    }
+    
+    /* Override any styles that might interfere */
+    .loaded-layout * {
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
   <select id="layoutSelector">
     <option value="">📱 Choose a Mobile Layout...</option>
-    <option value="layout-1.html">Layout 1 - Original (Clean)</option>
+    <option value="layout-1.html">Layout 1 - Original Clean</option>
     <option value="layout-2.html">Layout 2 - Modern Cards</option>
     <option value="layout-3.html">Layout 3 - Minimal Clean</option>
     <option value="layout-4.html">Layout 4 - Bold & Vibrant</option>
     <option value="layout-5.html">Layout 5 - Professional</option>
-    <option value="layout-6.html">Layout 6 - Service Focus</option>
-    <option value="layout-7.html">Layout 7 - Contact First</option>
-    <option value="layout-8.html">Layout 8 - Image Heavy</option>
   </select>
   
   <div id="loading">Loading layout...</div>
@@ -167,63 +182,51 @@
   <div id="content">
     <div class="welcome-content">
       <div class="instructions">
-        <h2>🎨 Mobile Layout Preview</h2>
-        <p><strong>Instructions:</strong> Use the dropdown in the top-right corner to instantly preview different mobile layout options for the Neighborhood Motors website.</p>
-        <p>Each layout maintains the same content but presents it in a unique, mobile-optimized design style.</p>
+        <h2>🎨 Mobile Layout Preview System</h2>
+        <p><strong>Instructions:</strong> Use the red dropdown in the top-right corner to instantly preview different mobile layout options.</p>
+        <p>Each layout maintains the same business content but presents it with a completely different mobile-optimized design.</p>
       </div>
       
       <h1>Neighborhood Motors</h1>
-      <p>Select a layout from the dropdown above to preview different mobile design options. Each layout is optimized for mobile viewing and maintains all the essential business information.</p>
+      <p>Select a layout from the dropdown above to preview different mobile design options. Click on any layout card below to quick-select it.</p>
       
       <div class="layout-preview-grid">
-        <div class="layout-preview-card">
+        <div class="layout-preview-card" onclick="selectLayout('layout-1.html')">
           <h3>🎯 Layout 1 - Original Clean</h3>
-          <p>Mobile-optimized version of the original design with improved spacing, typography, and touch-friendly elements.</p>
+          <p>Mobile-optimized version with improved spacing, typography, and touch-friendly elements.</p>
         </div>
         
-        <div class="layout-preview-card">
+        <div class="layout-preview-card" onclick="selectLayout('layout-2.html')">
           <h3>🃏 Layout 2 - Modern Cards</h3>
-          <p>Card-based design with floating header, gradient backgrounds, animated elements, and modern visual effects.</p>
+          <p>Card-based design with floating header, gradients, and modern visual effects.</p>
         </div>
         
-        <div class="layout-preview-card">
+        <div class="layout-preview-card" onclick="selectLayout('layout-3.html')">
           <h3>⚪ Layout 3 - Minimal Clean</h3>
-          <p>Ultra-clean minimal design focused on typography, whitespace, and essential information presentation.</p>
+          <p>Ultra-clean minimal design focused on typography and essential information.</p>
         </div>
         
-        <div class="layout-preview-card">
+        <div class="layout-preview-card" onclick="selectLayout('layout-4.html')">
           <h3>🎨 Layout 4 - Bold & Vibrant</h3>
-          <p>Eye-catching design with bold colors, large typography, and vibrant visual elements that demand attention.</p>
+          <p>Eye-catching design with bold colors, animations, and vibrant visual elements.</p>
         </div>
         
-        <div class="layout-preview-card">
+        <div class="layout-preview-card" onclick="selectLayout('layout-5.html')">
           <h3>💼 Layout 5 - Professional</h3>
-          <p>Corporate-style layout emphasizing trust, professionalism, and detailed service information.</p>
-        </div>
-        
-        <div class="layout-preview-card">
-          <h3>🔧 Layout 6 - Service Focus</h3>
-          <p>Service-centered design highlighting individual offerings with clear call-to-action buttons.</p>
-        </div>
-        
-        <div class="layout-preview-card">
-          <h3>📞 Layout 7 - Contact First</h3>
-          <p>Contact-focused layout prioritizing easy communication and immediate booking options.</p>
-        </div>
-        
-        <div class="layout-preview-card">
-          <h3>🖼️ Layout 8 - Image Heavy</h3>
-          <p>Visual-first approach with large images, photo backgrounds, and imagery-driven storytelling.</p>
+          <p>Coming soon - Corporate-style layout emphasizing trust and professionalism.</p>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    document.getElementById('layoutSelector').addEventListener('change', function(e) {
-      const layoutFile = e.target.value;
+    function selectLayout(layoutFile) {
+      document.getElementById('layoutSelector').value = layoutFile;
+      loadLayout(layoutFile);
+    }
+
+    function loadLayout(layoutFile) {
       if (!layoutFile) {
-        // Reset to welcome content
         location.reload();
         return;
       }
@@ -237,34 +240,53 @@
       fetch(layoutFile)
         .then(response => {
           if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`Layout file not found: ${layoutFile}`);
           }
           return response.text();
         })
         .then(html => {
-          // Extract just the body content
+          // Parse the HTML
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
+          
+          // Extract head styles and body content
+          const headStyles = doc.head.innerHTML;
           const bodyContent = doc.body.innerHTML;
           
-          // Replace content
+          // Clear current content and add new content
           content.innerHTML = bodyContent;
+          content.className = 'loaded-layout';
+          
+          // Add the layout's styles to the head
+          const styleContainer = document.getElementById('layout-styles');
+          if (styleContainer) {
+            styleContainer.remove();
+          }
+          
+          const newStyleContainer = document.createElement('div');
+          newStyleContainer.id = 'layout-styles';
+          newStyleContainer.innerHTML = headStyles;
+          document.head.appendChild(newStyleContainer);
+          
           content.style.opacity = '1';
           loading.style.display = 'none';
           
           // Execute any scripts in the loaded content
           const scripts = content.querySelectorAll('script');
           scripts.forEach(script => {
-            if (script.src) {
-              // Handle external scripts
-              const newScript = document.createElement('script');
-              newScript.src = script.src;
-              document.head.appendChild(newScript);
-            } else if (script.textContent) {
-              // Handle inline scripts
-              const newScript = document.createElement('script');
-              newScript.textContent = script.textContent;
-              document.head.appendChild(newScript);
+            try {
+              if (script.src) {
+                const newScript = document.createElement('script');
+                newScript.src = script.src;
+                newScript.async = true;
+                document.head.appendChild(newScript);
+              } else if (script.textContent) {
+                const newScript = document.createElement('script');
+                newScript.textContent = script.textContent;
+                document.body.appendChild(newScript);
+              }
+            } catch (error) {
+              console.warn('Script execution error:', error);
             }
           });
           
@@ -276,24 +298,33 @@
           loading.style.display = 'none';
           content.style.opacity = '1';
           content.innerHTML = `
-            <div style="text-align: center; padding: 40px 20px;">
-              <h2 style="color: #ff4966; margin-bottom: 16px;">Layout Not Found</h2>
-              <p>The selected layout file couldn't be loaded. Please ensure all layout files are properly uploaded to your GitHub repository.</p>
-              <p style="font-size: 14px; opacity: 0.7;">Error: ${error.message}</p>
-              <button onclick="location.reload()" style="background: #d90429; color: white; border: none; padding: 12px 24px; border-radius: 8px; margin-top: 16px; cursor: pointer;">
-                Return to Layout Selector
+            <div style="text-align: center; padding: 40px 20px; color: white;">
+              <h2 style="color: #ff4966; margin-bottom: 16px;">⚠️ Layout Not Found</h2>
+              <p>The layout file <strong>${layoutFile}</strong> couldn't be loaded.</p>
+              <p style="font-size: 14px; opacity: 0.7; margin: 16px 0;">Make sure the file exists in your GitHub repository.</p>
+              <div style="background: #151519; border: 1px solid #2a2a30; border-radius: 12px; padding: 20px; margin: 20px 0; text-align: left;">
+                <h3 style="color: #d90429; margin-top: 0;">Troubleshooting:</h3>
+                <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
+                  <li>Ensure <code>${layoutFile}</code> exists in your repository</li>
+                  <li>Check that GitHub Pages is enabled</li>
+                  <li>Verify the file was uploaded correctly</li>
+                  <li>Try refreshing the page</li>
+                </ul>
+              </div>
+              <button onclick="location.reload()" style="background: #d90429; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px;">
+                🔄 Return to Layout Selector
               </button>
             </div>
           `;
         });
+    }
+
+    // Event listener for dropdown
+    document.getElementById('layoutSelector').addEventListener('change', function(e) {
+      loadLayout(e.target.value);
     });
     
-    // Add some mobile-specific optimizations
-    if ('serviceWorker' in navigator) {
-      // Optional: Add service worker for better mobile performance
-    }
-    
-    // Prevent zoom on input focus (mobile)
+    // Prevent mobile zoom on select
     document.addEventListener('touchstart', function() {}, true);
   </script>
 </body>
