@@ -26,22 +26,25 @@
     }
     
     /* Layout Selector */
-    #layoutSelector {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      z-index: 1000;
-      padding: 12px 16px;
-      background: var(--red);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      min-width: 200px;
-    }
+   #layoutSelector {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  padding: 12px 16px;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  /* The issue is with the min-width. Replace it with the following: */
+  width: auto;
+  display: flex; /* This will make the container a flexbox */
+  justify-content: flex-start; /* This will align the content to the start of the flexbox */
+}
     
     #layoutSelector:hover {
       background: #b40322;
