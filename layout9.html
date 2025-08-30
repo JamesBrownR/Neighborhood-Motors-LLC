@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neighborhood Motors – Auto Repair, Collision, Glass & More | Tulsa, OK</title>
+  <meta name="description" content="Neighborhood Motors in Tulsa, OK. Auto Glass, Full Service Auto Repair, Collision, Upholstery, Auto Electric, Towing & Roadside. Call now: +1 (213) 705-6862.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #111827; /* Tailwind gray-900 */
+      color: #F9FAFB; /* Tailwind gray-50 */
+    }
+    .brand-red { color: #EF4444; /* Tailwind red-500 */ }
+    .bg-brand-red { background-color: #EF4444; }
+    .hover-bg-brand-red:hover { background-color: #DC2626; /* Tailwind red-600 */ }
+    .border-brand-red { border-color: #EF4444; }
+    .glow {
+        animation: glow 2s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+      50% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.7); }
+    }
+    /* Simple fade-in animation for elements */
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Apply staggered delays for animations */
+    .fade-in-delay-1 { animation-delay: 0.2s; }
+    .fade-in-delay-2 { animation-delay: 0.4s; }
+    .fade-in-delay-3 { animation-delay: 0.6s; }
+    .fade-in-delay-4 { animation-delay: 0.8s; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- =================== HEADER =================== -->
+  <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-sm border-b border-gray-700">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Logo and Name -->
+        <div class="flex items-center space-x-4">
+          <div class="bg-brand-red p-2 rounded-lg">
+            <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Neighborhood Motors logo icon"><path d="M22 19.59 18.42 16a5.5 5.5 0 0 1-7.78-7.78L8 5.59 5.59 8l2.63 2.64a5.5 5.5 0 0 0 7.78 7.78L19.59 22 22 19.59z"></path></svg>
+          </div>
+          <div>
+            <h1 class="text-xl font-extrabold text-white">Neighborhood Motors</h1>
+            <p class="text-xs text-gray-400 hidden sm:block">Auto Glass • Collision • Full Service Repair</p>
+          </div>
+        </div>
+        <!-- CTA Buttons -->
+        <div class="flex items-center space-x-3">
+          <a href="#booking" class="hidden sm:inline-block text-sm font-semibold bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-gray-600 transition-colors">Book Online</a>
+          <a href="tel:+12137056862" class="text-sm font-semibold bg-brand-red text-white px-4 py-2 rounded-full hover-bg-brand-red transition-colors flex items-center space-x-2 glow">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <span class="hidden md:inline">+1 (213) 705-6862</span>
+            <span class="md:hidden">Call Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =================== HERO =================== -->
+    <section class="py-16 sm:py-24 bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-gray-800/20 [mask-image:linear-gradient(to_bottom,white_20%,transparent_100%)]"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        <div class="inline-flex items-center space-x-2 bg-gray-800 border border-gray-700 text-sm px-4 py-2 rounded-full mb-6 fade-in">
+            <span>Open Today</span> <span class="text-gray-400">•</span> <span class="font-semibold">See hours below</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-4 fade-in fade-in-delay-1">
+          Auto Glass, Collision & Full Service Auto Repair
+        </h2>
+        <p class="text-lg text-red-500 font-semibold mb-8 fade-in fade-in-delay-2">Done Right, The First Time.</p>
+        <p class="max-w-3xl mx-auto text-gray-300 mb-12 fade-in fade-in-delay-3">
+          Auto Glass 🚗 • Towing & Roadside Services 🪝 • Full Service Auto Repair 🔧 🧰 • Auto Electric 🚘 🛠️ • Collision Repair 💥🚗🛻 • Auto Upholstery Repair 🪡
+        </p>
+
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-left fade-in fade-in-delay-4">
+            <div class="bg-gray-800/50 border border-gray-700 p-6 rounded-2xl">
+                <h3 class="font-bold text-lg text-white mb-4">Contact & Location</h3>
+                <div class="space-y-3 text-sm">
+                    <p><strong class="text-gray-400 w-20 inline-block">Address:</strong> <span class="text-gray-200">1023 E 6th St, Tulsa, OK 74120</span></p>
+                    <p><strong class="text-gray-400 w-20 inline-block">Call:</strong> <a href="tel:+12137056862" class="text-red-400 hover:text-red-300">+1 (213) 705-6862</a></p>
+                    <p><strong class="text-gray-400 w-20 inline-block">Instagram:</strong> <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener" class="text-red-400 hover:text-red-300">@neighborhoodmotorsautogroup</a></p>
+                </div>
+            </div>
+            <div class="bg-gray-800/50 border border-gray-700 p-6 rounded-2xl">
+                <h3 class="font-bold text-lg text-white mb-4">Shop Hours</h3>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                    <div><strong class="text-gray-400">Mon–Thu:</strong><span class="text-gray-200 ml-2">10 AM–9 PM</span></div>
+                    <div><strong class="text-gray-400">Fri:</strong><span class="text-gray-200 ml-2">10 AM–10 PM</span></div>
+                    <div><strong class="text-gray-400">Sat:</strong><span class="text-gray-200 ml-2">11 AM–10 PM</span></div>
+                    <div><strong class="text-gray-400">Sun:</strong><span class="text-gray-200 ml-2">1–7 PM</span></div>
+                    <div><strong class="text-gray-400">Walk‑ins:</strong><span class="text-gray-200 ml-2">Welcome</span></div>
+                    <div><strong class="text-gray-400">After‑hours:</strong><span class="text-gray-200 ml-2">By appointment</span></div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== SERVICES =================== -->
+    <section class="py-16 sm:py-24 bg-gray-900">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Our Services</h2>
+          <p class="mt-4 text-lg text-gray-400">Comprehensive care for your vehicle, all under one roof.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service Card -->
+          <div class="bg-gray-800 rounded-2xl p-6 border-t-4 border-brand-red transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+            <h3 class="text-xl font-bold text-white mb-2">Auto Glass</h3>
+            <p class="text-gray-400">Chip repair • Windshields • Calibration</p>
+          </div>
+          <!-- Service Card -->
+          <div class="bg-gray-800 rounded-2xl p-6 border-t-4 border-brand-red transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+            <h3 class="text-xl font-bold text-white mb-2">Towing & Roadside</h3>
+            <p class="text-gray-400">Jump starts • Tire change • Lockouts</p>
+          </div>
+          <!-- Service Card -->
+          <div class="bg-gray-800 rounded-2xl p-6 border-t-4 border-brand-red transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+            <h3 class="text-xl font-bold text-white mb-2">Full Service Repair</h3>
+            <p class="text-gray-400">Brakes • Suspension • Engine • A/C</p>
+          </div>
+          <!-- Service Card -->
+          <div class="bg-gray-800 rounded-2xl p-6 border-t-4 border-brand-red transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+            <h3 class="text-xl font-bold text-white mb-2">Auto Electric</h3>
+            <p class="text-gray-400">Diagnostics • Batteries • Alternators</p>
+          </div>
+          <!-- Service Card -->
+          <div class="bg-gray-800 rounded-2xl p-6 border-t-4 border-brand-red transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+            <h3 class="text-xl font-bold text-white mb-2">Collision Repair</h3>
+            <p class="text-gray-400">Bumpers • Panels • Frame</p>
+          </div>
+          <!-- Service Card -->
+          <div class="bg-gray-800 rounded-2xl p-6 border-t-4 border-brand-red transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+            <h3 class="text-xl font-bold text-white mb-2">Upholstery Repair</h3>
+            <p class="text-gray-400">Seats • Headliners • Stitching</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== REVIEWS =================== -->
+    <section id="reviews" class="py-16 sm:py-24 bg-gray-900/50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row justify-between items-baseline mb-10">
+            <div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Trusted by Drivers in Tulsa</h2>
+                <p class="mt-2 text-lg text-gray-400">See what our customers have to say.</p>
+            </div>
+            <div class="flex items-center space-x-2 mt-4 sm:mt-0">
+                <div class="flex text-yellow-400">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <div class="text-gray-300 font-semibold"><span class="text-white">4.6</span> average rating</div>
+            </div>
+        </div>
+
+        <div id="reviewsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Reviews will be inserted here by JavaScript -->
+        </div>
+
+        <div class="text-center mt-12">
+            <button id="showMoreBtn" class="bg-gray-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-600 transition-colors hidden">Show More Reviews</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== BOOK / CONTACT =================== -->
+    <section id="booking" class="py-16 sm:py-24 bg-gray-900">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <!-- Map and Location -->
+            <div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Find Us or Get in Touch</h2>
+                <p class="mt-4 text-lg text-gray-400 mb-8">Visit our shop in Tulsa or send us a message online. We're ready to help.</p>
+                
+                <div class="rounded-2xl overflow-hidden border-2 border-gray-700 mb-6">
+                    <iframe class="w-full h-80" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <p class="font-semibold text-white">Neighborhood Motors</p>
+                    <p class="text-gray-400 text-sm">1023 E 6th St, Tulsa, OK 74120</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-gray-800 p-6 sm:p-8 rounded-2xl border border-gray-700">
+              <h3 class="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
+              <form id="contactForm" class="space-y-5">
+                <input type="hidden" name="_subject" value="Website Inquiry – Neighborhood Motors">
+                <div>
+                  <label for="name" class="text-sm font-semibold text-gray-300">Name</label>
+                  <input type="text" id="name" name="name" required placeholder="Your name" class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500 text-white">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label for="email" class="text-sm font-semibold text-gray-300">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="you@email.com" class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500 text-white">
+                    </div>
+                    <div>
+                        <label for="phone" class="text-sm font-semibold text-gray-300">Phone <span class="text-gray-500">(Optional)</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="(###) ###‑####" class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500 text-white">
+                    </div>
+                </div>
+                <div>
+                  <label for="service" class="text-sm font-semibold text-gray-300">Service Needed</label>
+                  <select id="service" name="service" class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500 text-white">
+                    <option>Auto Glass</option>
+                    <option>Towing & Roadside</option>
+                    <option>Full Service Auto Repair</option>
+                    <option>Auto Electric</option>
+                    <option>Collision Repair</option>
+                    <option>Upholstery Repair</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="msg" class="text-sm font-semibold text-gray-300">Message</label>
+                  <textarea id="msg" name="message" rows="4" placeholder="Tell us what you need..." class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500 text-white"></textarea>
+                </div>
+                <div>
+                  <button type="submit" class="w-full bg-brand-red text-white font-bold py-3 px-4 rounded-lg hover-bg-brand-red transition-all duration-300 transform hover:scale-105">Send Message</button>
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- =================== FOOTER =================== -->
+  <footer class="bg-gray-900 border-t border-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-400">
+        <!-- Column 1: Brand -->
+        <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-brand-red p-2 rounded-lg">
+                    <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M22 19.59 18.42 16a5.5 5.5 0 0 1-7.78-7.78L8 5.59 5.59 8l2.63 2.64a5.5 5.5 0 0 0 7.78 7.78L19.59 22 22 19.59z"></path></svg>
+                </div>
+                <span class="font-bold text-lg text-white">Neighborhood Motors</span>
+            </div>
+            <p>&copy; <span id="year"></span> Neighborhood Motors. All Rights Reserved.</p>
+        </div>
+        <!-- Column 2: Contact -->
+        <div class="space-y-2">
+            <h4 class="font-semibold text-white mb-2">Contact Info</h4>
+            <p><a href="tel:+12137056862" class="hover:text-red-400">+1 (213) 705‑6862</a></p>
+            <p><a href="mailto:service@neighborhoodmotors.example" class="hover:text-red-400">service@neighborhoodmotors.example</a></p>
+            <p><a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener" class="hover:text-red-400">Instagram</a></p>
+        </div>
+        <!-- Column 3: Hours -->
+        <div class="space-y-2">
+            <h4 class="font-semibold text-white mb-2">Hours</h4>
+            <p>Mon–Thu: 10 AM–9 PM</p>
+            <p>Fri: 10 AM–10 PM</p>
+            <p>Sat: 11 AM–10 PM</p>
+            <p>Sun: 1–7 PM</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Button for Call on Mobile -->
+    <div class="sm:hidden fixed bottom-4 right-4 z-50">
+        <a href="tel:+12137056862" class="flex items-center justify-center w-16 h-16 bg-brand-red rounded-full shadow-lg text-white transform hover:scale-110 transition-transform">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+        </a>
+    </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form submission handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const data = new FormData(form);
+      // Fallback to mailto: link which works everywhere
+      const params = new URLSearchParams();
+      for (const [key, value] of data.entries()) {
+        params.append(key, value);
+      }
+      const body = Array.from(data.entries()).map(([k,v])=>`${k}: ${v}`).join('\n');
+      window.location.href = `mailto:service@neighborhoodmotors.example?subject=${encodeURIComponent('Website Inquiry – Neighborhood Motors')}&body=${encodeURIComponent(body)}`;
+    });
+
+    // =================== Reviews Logic ===================
+    const REVIEWS = [
+      {name:'Nicci Johnson', stars:5, meta:'5 reviews · 1 photo • a month ago', body:`Omg !!! They fixed my 2011 Edge windshield....My hood came unlatched on the highway and bam!!!! They were amazing 👏.... they were kind ....clean and cool place to wait ...and best priced compared to 5 other companies.... they are awesome 👌 …`},
+      {name:'Alana Wilson', stars:5, meta:'8 reviews · 1 photo • a year ago', body:`I've had a great experience with this auto shop. They are very understanding, they have great communication, and have great prices. They will help you as much as they can. Their shop looks nice, and cleaned up as well. Overall great work to my car,great prices,great social interaction, and very helpful. They even offered to deliver my car to me.. I will be coming back to get my breaks done here in a few weeks.`},
+      {name:'Allison Terry', stars:5, meta:'3 reviews · 3 photos • a year ago', body:`Good guy Nice people. They stayed at the shop until 11:45pm to finish up my car for me so I could have it the next day for my commute. Changed a battery and an alternator on my 2007 Honda CR-V and gave me a 1 year warranty on the parts. Responsive through text which is nice and great hours for the customer!! Saving his number for my future repair needs. Response from the owner a year ago: Happy to help Allison. Thank you for your business & we are here for your future needs!`},
+      {name:'Ana Elizondo', stars:5, meta:'Local Guide · 27 reviews • 10 months ago', body:`I am very grateful for finding this place! I was able to stay up to date on the entire process, I was very satisfied with the price, and the time it took to get my window fixed was outstanding! Neighborhood Motors truly saved my day and … More`},
+      {name:'Stefan Taitano', stars:5, meta:'13 reviews · 7 photos • a year ago', body:`Getting the front bumper protector fixed on my vehicle from Fernando was a breeze. Communication was smooth and easy from start to end, and managed to complete the work in less time compared to other collision centers in the Tulsa area. … More. Response from the owner a year ago: Happy to help Stefan!`},
+      {name:'Mason Pollay', stars:5, meta:'13 reviews · 1 photo • 5 months ago', body:`Great guy! Super quick! Got my car in and out in a day! Definitely recommend!!`},
+      {name:'Johnny Goodenough', stars:5, meta:'1 review • a year ago', body:`Great customer service they replaced my serpentine belt and my AC compressor keep me updated on everything that was happening overall a really good experience only took a day to. Definitely would recommend this shop`},
+      {name:'Kristin Cannon', stars:5, meta:'1 review • a year ago', body:`They replaced the entire clutch system in a matter of days! Very friendly and fast service. Best pricing and hardest working in Tulsa area!`},
+      {name:'Lesli Hernandez', stars:5, meta:'5 reviews · 4 photos • a year ago', body:`Very pleased with the service I had received with this business! They worked on my transmission, which only took them about a week to finish. I Highly recommend!`},
+      {name:'Suyeong Choi', stars:5, meta:'2 reviews • 11 months ago', body:`I fixed my 2024 Kia forte at this repair shop. Very affordable and reasonable pricing, and kind and friendly technician.`},
+      {name:'Kenny Q.', stars:5, meta:'2 reviews • a year ago', body:`Got my car bumper replaced. Very personable. Very easy to work with. Flexible with scheduling, too!`},
+      {name:'Alex Diaz', stars:5, meta:'3 reviews • 2 years ago', body:`Was fast at figure out what the problem is and able to locate parts quickly. Figure out what the problem was, and gave me a solution within an hour of bringing the vehicle in. More`},
+      {name:'turtleblazed', stars:5, meta:'6 reviews • a year ago', body:`Very quick to find out the problem & get my car up & running again. Thank you.`},
+      {name:'Jonathan Balderas', stars:5, meta:'Local Guide · 15 reviews • 3 years ago', body:`Probably one of the best experiences I've had at a car dealership.`},
+      {name:'FROGGY_PR', stars:5, meta:'3 reviews · 1 photo • a year ago', body:`Knowledgeable and communicative staff, friendly and flexible. Will go again next time :)`},
+      {name:'Carmelo Betor', stars:5, meta:'1 review • a year ago', body:`They put some hours in, and got my car running.`},
+      {name:'Mohammad Al Musawi', stars:5, meta:'22 reviews • 3 years ago', body:`Great experience , friendly staff would definitely come back!`},
+      {name:'Jose Aguilar', stars:5, meta:'Local Guide · 33 reviews · 5 photos • 4 months ago', body:``},
+      {name:'Billy Lor', stars:5, meta:'Local Guide · 72 reviews · 62 photos • a year ago', body:``},
+      {name:'Devyn Izydor', stars:5, meta:'5 reviews · 1 photo • a year ago', body:``},
+      {name:'Giovana Flores', stars:1, meta:'4 reviews • 2 years ago', body:``}
+    ];
+
+    const grid = document.getElementById('reviewsGrid');
+    const btn = document.getElementById('showMoreBtn');
+    const BATCH_SIZE = 6;
+    let renderedCount = 0;
+
+    function createStarSVG(isFilled) {
+        return `<svg class="w-4 h-4 ${isFilled ? 'text-yellow-400' : 'text-gray-600'}" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
+    }
+    
+    function renderNextBatch() {
+        const batch = REVIEWS.slice(renderedCount, renderedCount + BATCH_SIZE);
+        batch.forEach((review, index) => {
+            if (review.body.trim() === '') return; // Skip reviews with no body text
+
+            const reviewEl = document.createElement('div');
+            reviewEl.className = 'bg-gray-800 p-6 rounded-2xl flex flex-col fade-in';
+            reviewEl.style.animationDelay = `${index * 100}ms`;
+
+            const starsHTML = Array(5).fill(0).map((_, i) => createStarSVG(i < review.stars)).join('');
+            
+            reviewEl.innerHTML = `
+                <div class="flex items-center mb-3">
+                    <div class="flex">${starsHTML}</div>
+                </div>
+                <p class="text-gray-300 mb-4 flex-grow">“${review.body}”</p>
+                <div class="flex items-center mt-auto">
+                    <div>
+                        <p class="font-semibold text-white">${review.name}</p>
+                        <p class="text-xs text-gray-500">${review.meta}</p>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(reviewEl);
+        });
+        
+        renderedCount += batch.length;
+        
+        if (renderedCount < REVIEWS.filter(r => r.body.trim() !== '').length) {
+            btn.hidden = false;
+        } else {
+            btn.hidden = true;
+        }
+    }
+
+    btn.addEventListener('click', renderNextBatch);
+
+    // Initial render
+    renderNextBatch();
+
+    // =================== Schema.org LocalBusiness ===================
+    const schema = {
+      '@context':'https://schema.org',
+      '@type':'AutoRepair',
+      'name':'Neighborhood Motors',
+      'telephone':'+1-213-705-6862',
+      'address':{'@type':'PostalAddress','streetAddress':'1023 E 6th St','addressLocality':'Tulsa','addressRegion':'OK','postalCode':'74120','addressCountry':'US'},
+      'url':location.href,
+      'sameAs':['https://www.instagram.com/neighborhoodmotorsautogroup'],
+      'openingHoursSpecification':[
+        {'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday'],'opens':'10:00','closes':'21:00'},
+        {'@type':'OpeningHoursSpecification','dayOfWeek':'Friday','opens':'10:00','closes':'22:00'},
+        {'@type':'OpeningHoursSpecification','dayOfWeek':'Saturday','opens':'11:00','closes':'22:00'},
+        {'@type':'OpeningHoursSpecification','dayOfWeek':'Sunday','opens':'13:00','closes':'19:00'}
+      ],
+      'aggregateRating':{'@type':'AggregateRating','ratingValue':'4.6','reviewCount':REVIEWS.length}
+    };
+    const ldJsonScript = document.createElement('script');
+    ldJsonScript.type = 'application/ld+json';
+    ldJsonScript.textContent = JSON.stringify(schema);
+    document.head.appendChild(ldJsonScript);
+  </script>
+</body>
+</html>
