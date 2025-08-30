@@ -1,38 +1,319 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Neighborhood Motors – Auto Repair, Collision, Glass & More | Tulsa, OK</title>
   <meta name="description" content="Neighborhood Motors in Tulsa, OK. Auto Glass, Full Service Auto Repair, Collision, Upholstery, Auto Electric, Towing & Roadside. Call now: +1 (213) 705-6862." />
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Custom Styles & Tailwind Config -->
-  <style type="text/tailwindcss">
+  <!-- All styles are self-contained below -->
+  <style>
+    /* CSS Variables */
+    :root {
+      --color-black: #0f0f10;
+      --color-gray-900: #111827;
+      --color-gray-800: #1f2937;
+      --color-gray-700: #374151;
+      --color-gray-600: #4b5563;
+      --color-gray-400: #9ca3af;
+      --color-gray-300: #d1d5db;
+      --color-white: #ffffff;
+      --color-red-600: #dc2626;
+      --color-red-700: #b91c1c;
+      --color-yellow-400: #facc15;
+    }
+
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0f0f10;
-      color: #e4e4e7;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--color-black);
+      color: var(--color-gray-300);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .brand-red {
-      --tw-bg-opacity: 1;
-      background-color: rgb(217 4 41 / var(--tw-bg-opacity));
+
+    h1, h2, h3 {
+      color: var(--color-white);
+      font-weight: 800;
     }
-    .brand-red-hover {
-      --tw-bg-opacity: 1;
-      background-color: rgb(180 3 34 / var(--tw-bg-opacity));
+
+    a {
+      text-decoration: none;
+      color: var(--color-red-600);
+      transition: color 0.2s ease-in-out;
     }
-    .brand-red-text {
-      color: #d90429;
+    a:hover {
+      color: var(--color-red-700);
     }
-    /* Simple fade-in animation */
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* Header */
+    .header {
+      background-color: rgba(17, 24, 39, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid var(--color-gray-800);
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand-logo {
+      background-color: var(--color-red-600);
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
+    .brand-logo svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--color-white);
+    }
+    .brand-title {
+      font-size: 1.25rem;
+    }
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--color-gray-400);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .btn {
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      transition: all 0.2s ease-in-out;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-gray {
+      background-color: var(--color-gray-700);
+      color: var(--color-white);
+    }
+    .btn-gray:hover {
+      background-color: var(--color-gray-600);
+    }
+    .btn-red {
+      background-color: var(--color-red-600);
+      color: var(--color-white);
+    }
+    .btn-red:hover {
+      background-color: var(--color-red-700);
+    }
+
+    /* Main Content & Sections */
+    .section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    .section-dark {
+      background-color: var(--color-gray-900);
+    }
+    .section-darker {
+      background-color: var(--color-black);
+    }
+    .text-center {
+      text-align: center;
+    }
+
+    /* Hero Section */
+    .hero-pre-title {
+      color: var(--color-red-600);
+      font-weight: 600;
+    }
+    .hero-title {
+      font-size: 2.25rem;
+      margin-top: 0.5rem;
+      line-height: 1.1;
+    }
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--color-gray-300);
+      max-width: 48rem;
+      margin: 1rem auto 0;
+    }
+    .hero-actions {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .hero-actions .btn {
+      padding: 0.75rem 1.5rem;
+    }
+    .hero-actions .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Info Bar */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+    .info-card {
+      border: 1px solid var(--color-gray-800);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-gray-900);
+    }
+    .info-card h3 {
+      font-size: 1.125rem;
+    }
+    .info-card p, .info-card a {
+      margin-top: 0.25rem;
+      display: block;
+      color: var(--color-gray-400);
+    }
+
+    /* Services & Reviews */
+    .section-header p {
+      color: var(--color-gray-400);
+      margin-top: 0.5rem;
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section-title {
+      font-size: 1.875rem;
+    }
+    .cards-grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+    .service-card {
+      background-color: var(--color-gray-900);
+      border: 1px solid var(--color-gray-800);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      border-color: var(--color-red-600);
+      transform: translateY(-4px);
+    }
+    .service-card h3 { font-size: 1.25rem; }
+    .service-card div { color: var(--color-gray-400); }
+    
+    /* Reviews Section */
+    .stars-container {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-yellow-400);
+    }
+    .stars-container svg { width: 1.5rem; height: 1.5rem; }
+    #reviewsGrid article {
+      background-color: var(--color-gray-800);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--color-gray-700);
+    }
+    .review-stars {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--color-yellow-400);
+    }
+    .review-stars svg { width: 1.25rem; height: 1.25rem; }
+    #reviewsGrid h4 { margin-top: 1rem; font-weight: 600; }
+    #reviewsGrid .meta { font-size: 0.75rem; color: var(--color-gray-400); }
+    #reviewsGrid blockquote { margin-top: 0.5rem; font-size: 0.875rem; color: var(--color-gray-300); }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 3rem;
+      align-items: flex-start;
+    }
+    .map-container {
+      margin-top: 2rem;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid var(--color-gray-800);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 20rem;
+      display: block;
+    }
+    .contact-form-wrapper {
+      background-color: var(--color-gray-900);
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid var(--color-gray-800);
+    }
+    .contact-form-wrapper h3 { font-size: 1.5rem; }
+    .contact-form { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form label { font-size: 0.875rem; font-weight: 500; color: var(--color-gray-300); }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      margin-top: 0.25rem;
+      display: block;
+      width: 100%;
+      background-color: var(--color-gray-800);
+      border: 1px solid var(--color-gray-700);
+      border-radius: 0.375rem;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+      padding: 0.5rem 0.75rem;
+      color: var(--color-white);
+    }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--color-red-600);
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
+    }
+    .contact-form button { width: 100%; padding: 0.75rem 1.5rem; }
+    .contact-form button:hover { transform: scale(1.02); }
+
+    /* Footer */
+    .footer {
+      background-color: var(--color-gray-900);
+      border-top: 1px solid var(--color-gray-800);
+    }
+    .footer-grid {
+      padding: 2rem 0;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+    .footer-grid h3 { font-size: 1rem; }
+    .footer-grid p, .footer-grid li { font-size: 0.875rem; color: var(--color-gray-400); margin-top: 0.5rem; }
+    .footer-grid ul { list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem; }
+
+    /* Animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -41,27 +322,50 @@
       opacity: 0;
       animation: fadeIn 0.6s ease-out forwards;
     }
+    
+    /* Responsive Breakpoints */
+    .hidden { display: none; }
+    @media (min-width: 640px) {
+      .sm-block { display: block; }
+      .sm-inline { display: inline; }
+      .section { padding-top: 6rem; padding-bottom: 6rem; }
+      .section-title { font-size: 2.25rem; }
+      .hero-title { font-size: 3rem; }
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 768px) {
+      .info-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: repeat(3, 1fr); }
+      #reviewsGrid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .hero-title { font-size: 3.75rem; }
+      .cards-grid { grid-template-columns: repeat(3, 1fr); }
+      #reviewsGrid { grid-template-columns: repeat(3, 1fr); }
+      .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      .map-container iframe { height: 24rem; }
+    }
   </style>
 </head>
-<body class="antialiased">
+<body>
 
   <!-- =================== HEADER =================== -->
-  <header class="bg-gray-900/80 sticky top-0 z-50 backdrop-blur-sm border-b border-gray-800">
-    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="#" class="flex items-center gap-3">
-        <div class="bg-red-600 p-2 rounded-lg">
-          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" role="img" aria-label="Neighborhood Motors logo icon"><path d="M22 19.59 18.42 16a5.5 5.5 0 0 1-7.78-7.78L8 5.59 5.59 8l2.63 2.64a5.5 5.5 0 0 0 7.78 7.78L19.59 22 22 19.59z"></path></svg>
+  <header class="header">
+    <nav class="container navbar">
+      <a href="#" class="brand">
+        <div class="brand-logo">
+          <svg fill="currentColor" viewBox="0 0 24 24" role="img" aria-label="Neighborhood Motors logo icon"><path d="M22 19.59 18.42 16a5.5 5.5 0 0 1-7.78-7.78L8 5.59 5.59 8l2.63 2.64a5.5 5.5 0 0 0 7.78 7.78L19.59 22 22 19.59z"></path></svg>
         </div>
         <div>
-          <h1 class="text-xl font-extrabold text-white">Neighborhood Motors</h1>
-          <p class="text-xs text-gray-400 hidden sm:block">Auto Repair • Collision • Glass</p>
+          <h1 class="brand-title">Neighborhood Motors</h1>
+          <p class="brand-subtitle hidden sm-block">Auto Repair • Collision • Glass</p>
         </div>
       </a>
-      <div class="flex items-center gap-3">
-        <a href="#booking" class="hidden sm:inline-block bg-gray-700 text-white font-bold py-2 px-4 rounded-full hover:bg-gray-600 transition-colors">Book Online</a>
-        <a href="tel:+12137056862" class="bg-red-600 text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 transition-colors flex items-center gap-2">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C11.4 22 2 12.6 2 1a1 1 0 0 1 1-1h4.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/></svg>
-          <span class="hidden sm:inline">+1 (213) 705-6862</span>
+      <div class="header-actions">
+        <a href="#booking" class="btn btn-gray hidden sm-inline">Book Online</a>
+        <a href="tel:+12137056862" class="btn btn-red">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="width:1.25rem; height:1.25rem;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C11.4 22 2 12.6 2 1a1 1 0 0 1 1-1h4.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/></svg>
+          <span class="hidden sm-inline">+1 (213) 705-6862</span>
         </a>
       </div>
     </nav>
@@ -69,109 +373,107 @@
 
   <!-- =================== HERO =================== -->
   <main>
-    <section class="bg-gray-900 py-16 sm:py-24 text-center">
-      <div class="container mx-auto px-6">
-        <p class="text-red-500 font-semibold">Open Today • Walk-ins Welcome</p>
-        <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mt-2 leading-tight">Auto Repair & Collision Experts</h2>
-        <p class="text-lg text-gray-300 max-w-3xl mx-auto mt-4">Full-service auto repair, auto glass, collision, upholstery, and more in Tulsa, OK. We get the job done right.</p>
-        <div class="mt-8 flex justify-center gap-4 flex-wrap">
-          <a href="#booking" class="bg-red-600 text-white font-bold py-3 px-6 rounded-full hover:bg-red-700 transition-transform hover:scale-105">Request an Appointment</a>
-          <a href="#services" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-full hover:bg-gray-600 transition-transform hover:scale-105">View Our Services</a>
+    <section class="section section-dark text-center">
+      <div class="container">
+        <p class="hero-pre-title">Open Today • Walk-ins Welcome</p>
+        <h2 class="hero-title">Auto Repair & Collision Experts</h2>
+        <p class="hero-subtitle">Full-service auto repair, auto glass, collision, upholstery, and more in Tulsa, OK. We get the job done right.</p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-red">Request an Appointment</a>
+          <a href="#services" class="btn btn-gray">View Our Services</a>
         </div>
       </div>
     </section>
     
     <!-- Info Bar -->
-    <section class="bg-black py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="border border-gray-800 p-6 rounded-xl bg-gray-900">
-                    <h3 class="font-bold text-white text-lg">Our Address</h3>
-                    <p class="text-gray-400 mt-1">1023 E 6th St, Tulsa, OK 74120</p>
+    <section class="section section-darker">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Our Address</h3>
+                    <p>1023 E 6th St, Tulsa, OK 74120</p>
                 </div>
-                <div class="border border-gray-800 p-6 rounded-xl bg-gray-900">
-                    <h3 class="font-bold text-white text-lg">Call Us</h3>
-                    <a href="tel:+12137056862" class="text-red-500 hover:text-red-400 mt-1 block">+1 (213) 705-6862</a>
+                <div class="info-card">
+                    <h3>Call Us</h3>
+                    <a href="tel:+12137056862">+1 (213) 705-6862</a>
                 </div>
-                <div class="border border-gray-800 p-6 rounded-xl bg-gray-900">
-                    <h3 class="font-bold text-white text-lg">Business Hours</h3>
-                    <p class="text-gray-400 mt-1">Mon-Sat: 10am-10pm, Sun: 1pm-7pm</p>
+                <div class="info-card">
+                    <h3>Business Hours</h3>
+                    <p>Mon-Sat: 10am-10pm, Sun: 1pm-7pm</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- =================== SERVICES =================== -->
-    <section id="services" class="py-16 sm:py-24">
-      <div class="container mx-auto px-6">
-        <div class="text-center">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Our Services</h2>
-          <p class="text-gray-400 mt-2 max-w-2xl mx-auto">From a small chip in your windshield to a full collision repair, we handle it all.</p>
+    <section id="services" class="section">
+      <div class="container">
+        <div class="text-center section-header">
+          <h2 class="section-title">Our Services</h2>
+          <p>From a small chip in your windshield to a full collision repair, we handle it all.</p>
         </div>
-        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Service Cards -->
-          <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 hover:-translate-y-1 transition-all"><h3>Auto Glass</h3><div class="text-gray-400">Chip repair • Windshields • Calibration</div></div>
-          <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 hover:-translate-y-1 transition-all"><h3>Towing & Roadside</h3><div class="text-gray-400">Jump starts • Tire change • Lockouts</div></div>
-          <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 hover:-translate-y-1 transition-all"><h3>Full Service Repair</h3><div class="text-gray-400">Brakes • Suspension • Engine • A/C</div></div>
-          <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 hover:-translate-y-1 transition-all"><h3>Auto Electric</h3><div class="text-gray-400">Diagnostics • Batteries • Alternators</div></div>
-          <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 hover:-translate-y-1 transition-all"><h3>Collision Repair</h3><div class="text-gray-400">Bumpers • Panels • Frame</div></div>
-          <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 hover:-translate-y-1 transition-all"><h3>Upholstery Repair</h3><div class="text-gray-400">Seats • Headliners • Stitching</div></div>
+        <div class="cards-grid">
+          <div class="service-card"><h3>Auto Glass</h3><div>Chip repair • Windshields • Calibration</div></div>
+          <div class="service-card"><h3>Towing & Roadside</h3><div>Jump starts • Tire change • Lockouts</div></div>
+          <div class="service-card"><h3>Full Service Repair</h3><div>Brakes • Suspension • Engine • A/C</div></div>
+          <div class="service-card"><h3>Auto Electric</h3><div>Diagnostics • Batteries • Alternators</div></div>
+          <div class="service-card"><h3>Collision Repair</h3><div>Bumpers • Panels • Frame</div></div>
+          <div class="service-card"><h3>Upholstery Repair</h3><div>Seats • Headliners • Stitching</div></div>
         </div>
       </div>
     </section>
 
     <!-- =================== REVIEWS =================== -->
-    <section id="reviews" class="bg-gray-900 py-16 sm:py-24">
-      <div class="container mx-auto px-6">
-        <div class="text-center">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">What Our Customers Say</h2>
-          <div class="mt-4 flex justify-center items-center gap-2 text-yellow-400">
-            <!-- Stars -->
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="m12 15.4 3.76 2.27-1-4.38 3.24-2.82-4.51-.39L12 6.1l-1.5 4L6 10.5l3.24 2.82-1 4.38L12 15.4z"/></svg>
+    <section id="reviews" class="section section-dark">
+      <div class="container">
+        <div class="text-center section-header">
+          <h2 class="section-title">What Our Customers Say</h2>
+          <div class="stars-container">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="m12 15.4 3.76 2.27-1-4.38 3.24-2.82-4.51-.39L12 6.1l-1.5 4L6 10.5l3.24 2.82-1 4.38L12 15.4z"/></svg>
           </div>
           <p class="text-gray-400 mt-2"><b>4.6</b> average rating from <span id="reviewCount">21</span> reviews.</p>
         </div>
-        <div id="reviewsGrid" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" aria-live="polite"></div>
-        <div class="mt-12 text-center">
-            <button id="showMoreBtn" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-full hover:bg-gray-600 transition-colors" hidden>Show more</button>
+        <div id="reviewsGrid" class="cards-grid" aria-live="polite"></div>
+        <div class="text-center" style="margin-top: 3rem;">
+            <button id="showMoreBtn" class="btn btn-gray" hidden>Show more</button>
         </div>
       </div>
     </section>
 
     <!-- =================== BOOK / CONTACT =================== -->
-    <section id="booking" class="py-16 sm:py-24">
-      <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <section id="booking" class="section">
+      <div class="container">
+        <div class="contact-grid">
           <div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Get in Touch</h2>
+            <h2 class="section-title">Get in Touch</h2>
             <p class="text-gray-400 mt-2">Have a question or need to book an appointment? Fill out the form or find us on the map.</p>
-            <div class="mt-8 rounded-xl overflow-hidden border border-gray-800">
-              <iframe class="w-full h-80 lg:h-96" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i78!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
+            <div class="map-container">
+              <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i78!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
             </div>
           </div>
-          <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-            <h3 class="text-2xl font-bold text-white">Email Us</h3>
-            <form id="contactForm" class="mt-6 space-y-4">
+          <div class="contact-form-wrapper">
+            <h3>Email Us</h3>
+            <form id="contactForm" class="contact-form">
               <input type="hidden" name="_subject" value="Website Inquiry – Neighborhood Motors">
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
-                <input id="name" name="name" autocomplete="name" placeholder="Your name" required class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-red-500 focus:border-red-500">
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Your name" required>
               </div>
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-red-500 focus:border-red-500">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required>
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-gray-300">Phone</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(###) ###‑####" class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-red-500 focus:border-red-500">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(###) ###‑####">
               </div>
               <div>
-                <label for="service" class="block text-sm font-medium text-gray-300">Service</label>
-                <select id="service" name="service" class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-red-500 focus:border-red-500">
+                <label for="service">Service</label>
+                <select id="service" name="service">
                   <option>Auto Glass</option>
                   <option>Towing & Roadside</option>
                   <option>Full Service Auto Repair</option>
@@ -182,10 +484,10 @@
                 </select>
               </div>
               <div>
-                <label for="msg" class="block text-sm font-medium text-gray-300">Message</label>
-                <textarea id="msg" name="message" rows="4" placeholder="Tell us what you need" class="mt-1 block w-full bg-gray-800 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-red-500 focus:border-red-500"></textarea>
+                <label for="msg">Message</label>
+                <textarea id="msg" name="message" rows="4" placeholder="Tell us what you need"></textarea>
               </div>
-              <button type="submit" class="w-full bg-red-600 text-white font-bold py-3 px-6 rounded-full hover:bg-red-700 transition-transform hover:scale-105">Send Message</button>
+              <button type="submit" class="btn btn-red">Send Message</button>
             </form>
           </div>
         </div>
@@ -194,24 +496,24 @@
   </main>
   
   <!-- =================== FOOTER =================== -->
-  <footer class="bg-gray-900 border-t border-gray-800">
-    <div class="container mx-auto px-6 py-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
         <div>
-          <h3 class="font-bold text-white">Neighborhood Motors</h3>
-          <p class="text-sm text-gray-400 mt-2">© <span id="year"></span> All rights reserved.<br>Tulsa, OK</p>
+          <h3>Neighborhood Motors</h3>
+          <p>© <span id="year"></span> All rights reserved.<br>Tulsa, OK</p>
         </div>
         <div>
-          <h3 class="font-bold text-white">Contact</h3>
-          <ul class="text-sm text-gray-400 mt-2 space-y-1">
-            <li><a href="tel:+12137056862" class="hover:text-red-500">+1 (213) 705‑6862</a></li>
-            <li><a href="mailto:service@neighborhoodmotors.example" class="hover:text-red-500">service@neighborhoodmotors.example</a></li>
-            <li><a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener" class="hover:text-red-500">Instagram</a></li>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="tel:+12137056862">+1 (213) 705‑6862</a></li>
+            <li><a href="mailto:service@neighborhoodmotors.example">service@neighborhoodmotors.example</a></li>
+            <li><a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="font-bold text-white">Hours</h3>
-          <p class="text-sm text-gray-400 mt-2">Mon–Thu 10 AM–9 PM<br>Fri 10 AM–10 PM<br>Sat 11 AM–10 PM • Sun 1–7 PM</p>
+          <h3>Hours</h3>
+          <p>Mon–Thu 10 AM–9 PM<br>Fri 10 AM–10 PM<br>Sat 11 AM–10 PM • Sun 1–7 PM</p>
         </div>
       </div>
     </div>
@@ -260,22 +562,22 @@
     let rendered = 0;
 
     function starSVG(filled = true) {
-      const color = filled ? 'currentColor' : 'rgb(75 85 99)'; // text-yellow-400 or text-gray-600
-      return `<svg class="w-5 h-5" fill="${color}" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`;
+      const color = filled ? 'var(--color-yellow-400)' : 'var(--color-gray-600)';
+      return `<svg fill="${color}" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>`;
     }
 
     function renderNext() {
       const next = REVIEWS.slice(rendered, rendered + BATCH);
       next.forEach((r, index) => {
         const item = document.createElement('article');
-        item.className = 'fade-in bg-gray-800 p-6 rounded-xl border border-gray-700';
+        item.className = 'fade-in';
         item.style.animationDelay = `${index * 100}ms`;
         const stars = Array.from({ length: 5 }).map((_, i) => starSVG(i < r.stars)).join('');
         item.innerHTML = `
-          <div class="flex items-center gap-2 text-yellow-400">${stars}</div>
-          <p class="text-white font-semibold mt-4">${r.name}</p>
-          <p class="text-xs text-gray-400">${r.meta}</p>
-          <blockquote class="text-gray-300 mt-2 text-sm">${r.body}</blockquote>
+          <div class="review-stars">${stars}</div>
+          <h4>${r.name}</h4>
+          <p class="meta">${r.meta}</p>
+          <blockquote>${r.body}</blockquote>
         `;
         grid.appendChild(item);
       });
@@ -313,3 +615,4 @@
   </script>
 </body>
 </html>
+
