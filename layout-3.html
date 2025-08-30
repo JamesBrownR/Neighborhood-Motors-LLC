@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neighborhood Motors – Layout 3 Minimal</title>
+  <meta name="description" content="Neighborhood Motors in Tulsa, OK. Auto Glass, Full Service Auto Repair, Collision, Upholstery, Auto Electric, Towing & Roadside. Call now: +1 (213) 705-6862." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --red:#d90429;
+      --light-red:#ff4966;
+      --black:#000000;
+      --dark-gray:#111111;
+      --gray:#333333;
+      --light-gray:#666666;
+      --border:#222222;
+      --white:#ffffff;
+      --off-white:#f5f5f5;
+    }
+    
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background:var(--black);
+      color:var(--white);
+      font-family:Inter,system-ui,-apple-system,sans-serif;
+      line-height:1.7;
+      font-weight:300;
+    }
+    .container{
+      max-width:100%;
+      margin:0 auto;
+      padding:0 24px;
+    }
+    
+    /* Clean Typography */
+    h1,h2,h3{font-weight:600;line-height:1.3}
+    h1{font-size:36px;margin:0 0 16px}
+    h2{font-size:28px;margin:0 0 24px}
+    h3{font-size:20px;margin:0 0 12px}
+    p{margin:0 0 16px;color:var(--off-white);font-size:16px}
+    
+    /* Minimal Header */
+    header{
+      padding:24px 0;
+      border-bottom:1px solid var(--border);
+    }
+    .header-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .brand{
+      font-size:20px;
+      font-weight:600;
+      color:var(--white);
+      text-decoration:none;
+    }
+    .header-phone{
+      background:var(--red);
+      color:var(--white);
+      padding:10px 20px;
+      border-radius:4px;
+      text-decoration:none;
+      font-weight:400;
+      font-size:14px;
+      transition:background 0.2s ease;
+    }
+    .header-phone:hover{background:var(--light-red)}
+    
+    /* Hero Section */
+    .hero{
+      padding:80px 0;
+      text-align:center;
+    }
+    .hero h1{
+      font-size:42px;
+      font-weight:300;
+      margin-bottom:24px;
+      color:var(--white);
+    }
+    .hero .highlight{
+      color:var(--red);
+      font-weight:600;
+    }
+    .hero p{
+      font-size:18px;
+      margin:0 auto 40px;
+      max-width:600px;
+      color:var(--off-white);
+    }
+    .hero-actions{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-block;
+      padding:14px 32px;
+      border-radius:4px;
+      text-decoration:none;
+      font-weight:400;
+      transition:all 0.2s ease;
+      min-width:200px;
+      text-align:center;
+    }
+    .btn-primary{
+      background:var(--red);
+      color:var(--white);
+    }
+    .btn-primary:hover{
+      background:var(--light-red);
+      transform:translateY(-1px);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--white);
+      border:1px solid var(--border);
+    }
+    .btn-secondary:hover{
+      border-color:var(--gray);
+      background:var(--dark-gray);
+    }
+    
+    /* Business Info */
+    .business-info{
+      padding:60px 0;
+      background:var(--dark-gray);
+    }
+    .info-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:40px;
+      text-align:center;
+    }
+    .info-item h3{
+      color:var(--red);
+      font-weight:400;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:8px;
+    }
+    .info-item p{
+      font-size:18px;
+      color:var(--white);
+      margin:0;
+    }
+    .info-item a{
+      color:var(--white);
+      text-decoration:none;
+    }
+    .info-item a:hover{color:var(--red)}
+    
+    /* Services */
+    .services{
+      padding:80px 0;
+    }
+    .services h2{
+      text-align:center;
+      margin-bottom:60px;
+      font-weight:300;
+    }
+    .service-list{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:32px;
+    }
+    .service-item{
+      text-align:center;
+      padding:32px 24px;
+      border-top:1px solid var(--border);
+      transition:border-color 0.2s ease;
+    }
+    .service-item:hover{
+      border-color:var(--red);
+    }
+    .service-item h3{
+      color:var(--white);
+      margin-bottom:16px;
+      font-weight:400;
+    }
+    .service-item p{
+      color:var(--off-white);
+      font-size:15px;
+      line-height:1.6;
+    }
+    
+    /* Reviews */
+    .reviews{
+      padding:80px 0;
+      background:var(--dark-gray);
+    }
+    .reviews h2{
+      text-align:center;
+      margin-bottom:40px;
+      font-weight:300;
+    }
+    .rating-summary{
+      text-align:center;
+      margin-bottom:48px;
+    }
+    .rating-number{
+      font-size:48px;
+      font-weight:600;
+      color:var(--red);
+      margin:0 0 8px;
+    }
+    .rating-stars{
+      font-size:24px;
+      margin-bottom:8px;
+    }
+    .rating-text{
+      color:var(--off-white);
+      font-size:16px;
+    }
+    .review-list{
+      display:grid;
+      gap:32px;
+    }
+    .review-item{
+      border-left:2px solid var(--border);
+      padding-left:24px;
+    }
+    .review-item:hover{
+      border-color:var(--red);
+    }
+    .review-author{
+      font-weight:400;
+      color:var(--white);
+      margin-bottom:4px;
+    }
+    .review-meta{
+      font-size:13px;
+      color:var(--light-gray);
+      margin-bottom:12px;
+    }
+    .review-text{
+      color:var(--off-white);
+      font-size:15px;
+      line-height:1.6;
+    }
+    
+    /* Contact */
+    .contact{
+      padding:80px 0;
+    }
+    .contact h2{
+      text-align:center;
+      margin-bottom:48px;
+      font-weight:300;
+    }
+    .contact-form{
+      max-width:500px;
+      margin:0 auto;
+    }
+    .form-group{
+      margin-bottom:24px;
+    }
+    label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:400;
+      color:var(--off-white);
+      font-size:14px;
+    }
+    input,textarea,select{
+      width:100%;
+      padding:12px 16px;
+      background:var(--dark-gray);
+      border:1px solid var(--border);
+      border-radius:4px;
+      color:var(--white);
+      font-size:16px;
+      font-family:inherit;
+      transition:border-color 0.2s ease;
+    }
+    input:focus,textarea:focus,select:focus{
+      outline:none;
+      border-color:var(--red);
+    }
+    input::placeholder,textarea::placeholder{
+      color:var(--light-gray);
+    }
+    .submit-btn{
+      background:var(--red);
+      color:var(--white);
+      border:none;
+      padding:14px 32px;
+      border-radius:4px;
+      font-weight:400;
+      font-size:16px;
+      width:100%;
+      cursor:pointer;
+      transition:background 0.2s ease;
+    }
+    .submit-btn:hover{
+      background:var(--light-red);
+    }
+    
+    /* Map */
+    .map-section{
+      margin-top:60px;
+      text-align:center;
+    }
+    .map-section h3{
+      margin-bottom:24px;
+      font-weight:300;
+    }
+    .map-container{
+      border:1px solid var(--border);
+      border-radius:4px;
+      overflow:hidden;
+    }
+    iframe{
+      width:100%;
+      height:300px;
+      border:none;
+      display:block;
+    }
+    
+    /* Footer */
+    footer{
+      padding:60px 0 40px;
+      border-top:1px solid var(--border);
+      text-align:center;
+    }
+    .footer-content{
+      display:grid;
+      gap:32px;
+    }
+    .footer-section h4{
+      color:var(--red);
+      font-weight:400;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:16px;
+    }
+    .footer-section p,
+    .footer-section a{
+      color:var(--off-white);
+      text-decoration:none;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .footer-section a:hover{
+      color:var(--white);
+    }
+    .footer-bottom{
+      margin-top:40px;
+      padding-top:24px;
+      border-top:1px solid var(--border);
+      font-size:13px;
+      color:var(--light-gray);
+    }
+    
+    /* Mobile Call Button */
+    .mobile-call{
+      position:fixed;
+      bottom:24px;
+      left:24px;
+      right:24px;
+      z-index:100;
+    }
+    .mobile-call a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:var(--red);
+      color:var(--white);
+      padding:16px;
+      border-radius:4px;
+      text-decoration:none;
+      font-weight:400;
+      font-size:16px;
+      box-shadow:0 4px 20px rgba(217,4,41,0.3);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="brand">Neighborhood Motors</a>
+        <a href="tel:+12137056862" class="header-phone">Call Now</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Professional Auto Repair <span class="highlight">Done Right</span></h1>
+      <p>Trusted automotive services in Tulsa, Oklahoma. From auto glass to collision repair, we deliver quality workmanship and exceptional customer service.</p>
+      <div class="hero-actions">
+        <a href="tel:+12137056862" class="btn btn-primary">Call (213) 705-6862</a>
+        <a href="#contact" class="btn btn-secondary">Get Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="business-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-item">
+          <h3>Location</h3>
+          <p>1023 E 6th St<br>Tulsa, OK 74120</p>
+        </div>
+        
+        <div class="info-item">
+          <h3>Phone</h3>
+          <p><a href="tel:+12137056862">(213) 705-6862</a></p>
+        </div>
+        
+        <div class="info-item">
+          <h3>Hours</h3>
+          <p>Monday–Thursday: 10 AM–9 PM<br>
+          Friday: 10 AM–10 PM<br>
+          Saturday: 11 AM–10 PM<br>
+          Sunday: 1–7 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-list">
+        <div class="service-item">
+          <h3>Auto Glass</h3>
+          <p>Professional windshield repair and replacement, chip repair, and ADAS calibration services for all vehicle makes and models.</p>
+        </div>
+        
+        <div class="service-item">
+          <h3>Towing & Roadside Assistance</h3>
+          <p>24/7 emergency roadside services including jump starts, tire changes, lockout assistance, and professional towing.</p>
+        </div>
+        
+        <div class="service-item">
+          <h3>Full Service Auto Repair</h3>
+          <p>Complete automotive maintenance and repair services including brakes, suspension, engine diagnostics, and A/C systems.</p>
+        </div>
+        
+        <div class="service-item">
+          <h3>Auto Electric</h3>
+          <p>Advanced electrical diagnostics, battery replacement, alternator repair, and comprehensive electrical system troubleshooting.</p>
+        </div>
+        
+        <div class="service-item">
+          <h3>Collision Repair</h3>
+          <p>Expert collision repair services including body work, bumper repair, panel replacement, and frame straightening.</p>
+        </div>
+        
+        <div class="service-item">
+          <h3>Auto Upholstery</h3>
+          <p>Interior restoration services including seat repair, headliner replacement, and custom upholstery work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="container">
+      <h2>Customer Reviews</h2>
+      
+      <div class="rating-summary">
+        <div class="rating-number">4.6</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-text">Based on 21 customer reviews</div>
+      </div>
+      
+      <div class="review-list">
+        <div class="review-item">
+          <div class="review-author">Nicci Johnson</div>
+          <div class="review-meta">5 stars • a month ago</div>
+          <div class="review-text">"They fixed my 2011 Edge windshield... They were amazing, they were kind, clean and cool place to wait, and best priced compared to 5 other companies. They are awesome."</div>
+        </div>
+        
+        <div class="review-item">
+          <div class="review-author">Alana Wilson</div>
+          <div class="review-meta">5 stars • a year ago</div>
+          <div class="review-text">"I've had a great experience with this auto shop. They are very understanding, have great communication, and great prices. They even offered to deliver my car to me."</div>
+        </div>
+        
+        <div class="review-item">
+          <div class="review-author">Mason Pollay</div>
+          <div class="review-meta">5 stars • 5 months ago</div>
+          <div class="review-text">"Great guy! Super quick! Got my car in and out in a day! Definitely recommend!!"</div>
+        </div>
+        
+        <div class="review-item">
+          <div class="review-author">Allison Terry</div>
+          <div class="review-meta">5 stars • a year ago</div>
+          <div class="review-text">"Good guy Nice people. They stayed at the shop until 11:45pm to finish up my car for me so I could have it the next day for my commute. Great hours for the customer!"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+        </div>
+        
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service...</option>
+            <option value="auto-glass">Auto Glass</option>
+            <option value="towing">Towing & Roadside</option>
+            <option value="repair">Full Service Auto Repair</option>
+            <option value="electric">Auto Electric</option>
+            <option value="collision">Collision Repair</option>
+            <option value="upholstery">Auto Upholstery</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your vehicle and what you need..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+      
+      <div class="map-section">
+        <h3>Visit Our Shop</h3>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p><a href="tel:+12137056862">(213) 705-6862</a></p>
+          <p><a href="mailto:service@neighborhoodmotors.example">service@neighborhoodmotors.example</a></p>
+          <p><a href="https://www.instagram.com/neighborhoodmotorsautogroup">Instagram</a></p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Location</h4>
+          <p>1023 E 6th St<br>Tulsa, OK 74120</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Hours</h4>
+          <p>Mon–Thu: 10 AM–9 PM<br>
+          Fri: 10 AM–10 PM<br>
+          Sat: 11 AM–10 PM<br>
+          Sun: 1–7 PM</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2024 Neighborhood Motors. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-call">
+    <a href="tel:+12137056862">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C11.4 22 2 12.6 2 1a1 1 0 0 1 1-1h4.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/>
+      </svg>
+      Call Now
+    </a>
+  </div>
+</body>
+</html>
