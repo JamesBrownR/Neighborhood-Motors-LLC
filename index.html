@@ -448,7 +448,7 @@ utag.view(utag_data);
 
 <div class="ContentPane_1011271 ResponsiveBanner ResponsiveBanner_1011271">
 
-<!-- Replace the entire carousel section with this enhanced version -->
+<!-- Replace the entire carousel section with this simpler version -->
 <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -456,26 +456,17 @@ utag.view(utag_data);
 
     <div class="carousel-inner">
         <div class="carousel-item carousel-item-banner active">
-            <!-- Add overlay div for dimming -->
-            <div class="hero-overlay"></div>
+            <!-- Simple overlay for dimming -->
+            <div class="simple-overlay"></div>
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 600'%3E%3C/svg%3E" 
                  data-src="https://imagescdn.dealercarsearch.com/DealerImages/30/19857/s60r_1.jpg" 
                  class="first-slide slideImgUpdate img-fluid lazyload" loading="auto" alt="Neighborhood Motors Hero">
             
-            <!-- Enhanced caption with better positioning and styling -->
-            <div class="carousel-caption enhanced-caption">
-                <div class="hero-content">
-                    <h1 class="hero-title animated-text">Neighborhood Motors</h1>
-                    <p class="hero-subtitle animated-subtitle">Premier Auto Repair & Services in Tulsa, OK</p>
-                    <div class="hero-buttons">
-                        <a href="tel:+12137056862" class="btn btn-primary hero-cta pulse-btn">
-                            <i class="fa-solid fa-phone"></i> Call Now: (213) 705-6862
-                        </a>
-                        <a href="contact.html" class="btn btn-secondary hero-cta-secondary">
-                            <i class="fa-solid fa-calendar-check"></i> Get Free Quote
-                        </a>
-                    </div>
-                </div>
+            <!-- Clean, centered caption -->
+            <div class="carousel-caption simple-caption">
+                <h1 class="hero-title">Neighborhood Motors</h1>
+                <p class="hero-subtitle">Premier Auto Repair & Services in Tulsa, OK</p>
+                <a href="tel:+12137056862" class="btn btn-primary btn-lg">Call Now: (213) 705-6862</a>
             </div>
         </div>
     </div>
@@ -490,25 +481,21 @@ utag.view(utag_data);
     </a>
 </div>
 
-<!-- Add required CSS for hero enhancements -->
+<!-- Simple CSS improvements -->
 <style>
-/* Hero Section Enhancements */
-.carousel-item {
-    position: relative;
-    min-height: 70vh;
-}
-
-.hero-overlay {
+/* Simple overlay to dim image */
+.simple-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
-.enhanced-caption {
+/* Better positioned caption */
+.simple-caption {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -516,138 +503,53 @@ utag.view(utag_data);
     z-index: 2;
     text-align: center;
     width: 90%;
-    max-width: 800px;
 }
 
-.hero-content {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 3rem 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero-title {
+/* Larger, more readable text */
+.simple-caption .hero-title {
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: bold;
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     margin-bottom: 1rem;
-    letter-spacing: -1px;
 }
 
-.hero-subtitle {
-    font-size: 1.8rem;
-    color: #f8f9fa;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+.simple-caption .hero-subtitle {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.hero-cta {
-    padding: 1rem 2rem;
+/* Better button styling */
+.simple-caption .btn-primary {
+    padding: 15px 30px;
     font-size: 1.2rem;
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none;
+    font-weight: bold;
+    background-color: #dc3545;
+    border-color: #dc3545;
     transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    background: linear-gradient(45deg, #007bff, #0056b3);
-    border: none;
-    color: white;
 }
 
-.hero-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(0,123,255,0.4);
-    color: white;
-    text-decoration: none;
+.simple-caption .btn-primary:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+    transform: translateY(-2px);
 }
 
-.hero-cta-secondary {
-    background: linear-gradient(45deg, #28a745, #1e7e34);
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    border: none;
-    color: white;
-}
-
-.hero-cta-secondary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(40,167,69,0.4);
-    color: white;
-    text-decoration: none;
-}
-
-.pulse-btn {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 0 0 rgba(0,123,255,0.7); }
-    70% { box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 0 10px rgba(0,123,255,0); }
-    100% { box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 0 0 rgba(0,123,255,0); }
-}
-
-.animated-text {
-    animation: slideInDown 1s ease-out;
-}
-
-.animated-subtitle {
-    animation: slideInUp 1s ease-out 0.3s both;
-}
-
-@keyframes slideInDown {
-    from { opacity: 0; transform: translateY(-50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive adjustments */
+/* Responsive text sizing */
 @media (max-width: 768px) {
-    .hero-title {
+    .simple-caption .hero-title {
         font-size: 2.5rem;
     }
     
-    .hero-subtitle {
-        font-size: 1.3rem;
+    .simple-caption .hero-subtitle {
+        font-size: 1.2rem;
     }
     
-    .hero-content {
-        padding: 2rem 1rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .hero-cta, .hero-cta-secondary {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
+    .simple-caption .btn-primary {
+        font-size: 1rem;
+        padding: 12px 24px;
     }
 }
 </style>
