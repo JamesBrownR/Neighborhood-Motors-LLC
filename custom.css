@@ -1,22 +1,18 @@
-.hero-section {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
+/* Hero Improvements */
 .carousel-item {
   position: relative;
 }
 
 .carousel-item img {
   width: 100%;
-  height: 600px;
+  height: 500px; /* Adjusted for better fit */
   object-fit: cover;
+  filter: brightness(0.8); /* Dim the image */
 }
 
 .carousel-caption {
   position: absolute;
-  top: 50%;
+  top: 30%; /* Moved higher */
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -26,25 +22,68 @@
 }
 
 .hero-title {
-  font-size: 3em;
-  margin-bottom: 10px;
+  font-size: 4em; /* Larger */
   font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .hero-subtitle {
-  font-size: 1.5em;
+  font-size: 2em; /* Larger */
   margin-bottom: 20px;
 }
 
-.btn-primary {
-  background-color: #d90429;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
+/* Button Shapes/Icons */
+.filterBtns .filterImg {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto 10px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%;
+.filterBtns a:hover .filterImg {
+  transform: scale(1.1) rotate(5deg); /* Animation */
+}
+
+.filterBtns .filterInv .filterImg:before { content: "\f5b8"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 50px; color: #d90429; } /* Services icon (tools) */
+.filterBtns .filterApply .filterImg:before { content: "\f0b1"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 50px; color: #d90429; } /* Quote icon (briefcase) */
+.filterBtns .filterDirections .filterImg:before { content: "\f3c5"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 50px; color: #d90429; } /* Directions icon (map) */
+
+/* Layout/Spacing Improvements */
+section.contentWrapper {
+  padding: 60px 0; /* Better section spacing */
+}
+
+.filterBtns.row {
+  justify-content: center;
+  gap: 20px; /* Even spacing between buttons */
+}
+
+.filterBtns a {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Depth */
+  transition: box-shadow 0.3s;
+}
+
+.filterBtns a:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.testimonialWrapper {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+/* Footer Centering (already in previous) */
+.s60r_footerRight {
+  margin: 0 auto;
 }
