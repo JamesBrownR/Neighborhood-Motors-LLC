@@ -52,63 +52,144 @@
 
 <body class="homePage Default-dcs">
 
-    <header class="s60r_headerWrapper">
-       <!-- Keep ALL the JavaScript tracking code, just replace the HTML structure part -->
-<div class="consolidated-header">
-    <div class="container">
-        <div class="header-content">
-            <!-- Left: Logo -->
-            <div class="logo-section">
-                <!-- KEEP ALL THE TEALIUM JAVASCRIPT ABOVE THIS LINE -->
-                <a id="hlLogo" aria-label="Neighborhood Motors Logo" href="//neighborhoodmotors.com">
-                    <img class="dealerLogo logo logo_30 img-fluid" title="Neighborhood Motors" alt="Neighborhood Motors" 
-                         src="https://imagescdn.dealercarsearch.com/DealerImages/30/19857/s60r_logo.png">
-                </a>
-            </div>
-            
-            <!-- Center: Contact Info -->
-            <div class="contact-section">
-                <div class="contact-info">
-                    <span class="address">
-                        <i class="fa-solid fa-location-dot"></i> 1023 E 6th St, Tulsa, OK 74120
-                    </span>
-                    <span class="phone">
-                        <i class="fa-solid fa-phone"></i>
-                        <a href="tel:+12137056862">+1 (213) 705-6862</a>
-                    </span>
-                </div>
-            </div>
-            
-            <!-- Right: Navigation -->
-            <div class="nav-section">
-                <nav class="main-nav">
-                    <a href="directions.html" class="nav-link">Visit Us</a>
-                    <div class="dropdown">
-                        <a href="services.html" class="nav-link dropdown-toggle">Services</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="services.html#auto-glass">Auto Glass</a>
-                            <a class="dropdown-item" href="services.html#towing">Towing & Roadside</a>
-                            <a class="dropdown-item" href="services.html#repair">Full Service Repair</a>
-                            <a class="dropdown-item" href="services.html#electric">Auto Electric</a>
-                            <a class="dropdown-item" href="services.html#collision">Collision Repair</a>
-                            <a class="dropdown-item" href="services.html#upholstery">Upholstery Repair</a>
-                        </div>
-                    </div>
-                    <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" class="social-link">
-                        <i class="fa-brands fa-instagram"></i>
+   <header class="s60r_headerWrapper">
+    <div class="consolidated-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Left: Logo -->
+                <div class="logo-section">
+                    <!-- ALL THE TEALIUM JAVASCRIPT GOES HERE -->
+                    <script type="text/javascript">
+                        var pageTitle = "";
+                        var pageH1 = "";
+                        var pageTitleLength = "0";
+
+                        try {
+                            var pageTitleEl = document.querySelector('meta[name="og:title"]')
+
+                            if (pageTitleEl != null) {
+                                pageTitle = pageTitleEl.content;
+                                pageTitleLength = pageTitle.length;
+                            }
+                            document.addEventListener("DOMContentLoaded",
+                                function () {
+
+                                    var pageH1El = document.querySelector("h1");
+
+                                    if (pageH1El != null) {
+                                        var h1Text = pageH1El.innerText;
+
+                                        if (h1Text != null) {
+                                            pageH1 = h1Text;
+
+                                            if (init_utag_data && init_utag_data.page_h1 != null) {
+                                                init_utag_data.page_h1 = h1Text;
+                                            }
+
+                                        }
+                                    }
+                                    else {
+                                        if (init_utag_data["page_h1"] === "" || init_utag_data["page_h1"] === null) {
+                                            delete init_utag_data["page_h1"];
+                                        }
+                                    }
+
+
+                                });
+                        }
+                        catch {
+                            console.log('Tealium form error ')
+                        }
+                    </script>
+                    <script type="text/javascript">
+                    var init_utag_data = { 
+                    "tealium_event": "standard_view",
+                    "ga4_id": "G-ZQ6CENMLC4",
+                    "page_title": pageTitle,
+                    "page_h1": pageH1 ,
+                    "page_title_count": pageTitleLength,
+                    "site_company_name": "Neighborhood-Motors",
+                    "site_id": "19857",
+                    "site_internal_id": "30",
+                    "site_platform": "dcs",
+                    "site_section": "Home",
+                    "site_company_city": "Tulsa",
+                    "site_company_state": "OK",
+                    "site_company_zip_code": "74120",
+                    "site_phone_main": "+12137056862",
+                    };
+                    </script>
+                    <script type="text/javascript">
+                        var utag_data = init_utag_data;
+                    </script>
+                    <script type="text/javascript">
+                    utag_data = init_utag_data;
+                    (function (a, b, c, d) {
+                    a = 'https://tags.tiqcdn.com/utag/dtms/dcs-eas/prod/utag.js';
+                    b = document; c = 'script'; d = b.createElement(c); d.src = a; d.type = 'text/java' + c; d.async = true;
+                    a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a);
+                    })();
+                    window.addEventListener("load", (event) => {
+                    utag.view(utag_data);
+                    });
+                    </script>
+                    
+                    <a id="hlLogo" aria-label="Neighborhood Motors Logo" href="//neighborhoodmotors.com">
+                        <img class="dealerLogo logo logo_30 img-fluid" title="Neighborhood Motors" alt="Neighborhood Motors" 
+                             src="https://imagescdn.dealercarsearch.com/DealerImages/30/19857/s60r_logo.png">
                     </a>
-                </nav>
+                </div>
+                
+                <!-- Center: Contact Info -->
+                <div class="contact-section">
+                    <div class="contact-info">
+                        <span class="address">
+                            <i class="fa-solid fa-location-dot"></i> 1023 E 6th St, Tulsa, OK 74120
+                        </span>
+                        <span class="phone">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+12137056862">+1 (213) 705-6862</a>
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Right: Navigation -->
+                <div class="nav-section">
+                    <nav class="main-nav">
+                        <a href="directions.html" class="nav-link">Visit Us</a>
+                        <div class="dropdown">
+                            <a href="services.html" class="nav-link dropdown-toggle">Services</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="services.html#auto-glass">Auto Glass</a>
+                                <a class="dropdown-item" href="services.html#towing">Towing & Roadside</a>
+                                <a class="dropdown-item" href="services.html#repair">Full Service Repair</a>
+                                <a class="dropdown-item" href="services.html#electric">Auto Electric</a>
+                                <a class="dropdown-item" href="services.html#collision">Collision Repair</a>
+                                <a class="dropdown-item" href="services.html#upholstery">Upholstery Repair</a>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" class="social-link">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</header>
 
-<!-- Add the CSS -->
 <style>
+/* Remove any existing header styles that might be causing white space */
+.s60r_headerWrapper {
+    margin: 0;
+    padding: 0;
+}
+
 .consolidated-header {
     background-color: #dc3545;
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 0;
 }
 
 .header-content {
