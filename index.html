@@ -449,6 +449,7 @@ utag.view(utag_data);
 <div class="ContentPane_1011271 ResponsiveBanner ResponsiveBanner_1011271">
 
 <!-- Replace the entire carousel section with this simpler version -->
+<!-- Replace the entire carousel section with this version -->
 <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -462,11 +463,13 @@ utag.view(utag_data);
                  data-src="https://imagescdn.dealercarsearch.com/DealerImages/30/19857/s60r_1.jpg" 
                  class="first-slide slideImgUpdate img-fluid lazyload" loading="auto" alt="Neighborhood Motors Hero">
             
-            <!-- Clean, centered caption -->
-            <div class="carousel-caption simple-caption">
-                <h1 class="hero-title">Neighborhood Motors</h1>
-                <p class="hero-subtitle">Premier Auto Repair & Services in Tulsa, OK</p>
-                <a href="tel:+12137056862" class="btn btn-primary btn-lg">Call Now: (213) 705-6862</a>
+            <!-- Square translucent background for text -->
+            <div class="carousel-caption square-caption">
+                <div class="square-bg">
+                    <h1 class="hero-title">Neighborhood Motors</h1>
+                    <p class="hero-subtitle">Premier Auto Repair & Services in Tulsa, OK</p>
+                    <a href="tel:+12137056862" class="btn btn-primary btn-lg">Call Now: (213) 705-6862</a>
+                </div>
             </div>
         </div>
     </div>
@@ -481,7 +484,6 @@ utag.view(utag_data);
     </a>
 </div>
 
-<!-- Simple CSS improvements -->
 <style>
 /* Simple overlay to dim image */
 .simple-overlay {
@@ -495,7 +497,7 @@ utag.view(utag_data);
 }
 
 /* Better positioned caption */
-.simple-caption {
+.square-caption {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -503,10 +505,19 @@ utag.view(utag_data);
     z-index: 2;
     text-align: center;
     width: 90%;
+    max-width: 600px;
 }
 
-/* Larger, more readable text */
-.simple-caption .hero-title {
+/* Square translucent background */
+.square-bg {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 3rem 2rem;
+    border-radius: 0;
+    backdrop-filter: blur(5px);
+}
+
+/* Text styling */
+.square-bg .hero-title {
     font-size: 4rem;
     font-weight: bold;
     color: white;
@@ -514,15 +525,15 @@ utag.view(utag_data);
     margin-bottom: 1rem;
 }
 
-.simple-caption .hero-subtitle {
+.square-bg .hero-subtitle {
     font-size: 1.5rem;
     color: white;
     margin-bottom: 2rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
-/* Better button styling */
-.simple-caption .btn-primary {
+/* Button styling */
+.square-bg .btn-primary {
     padding: 15px 30px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -531,23 +542,27 @@ utag.view(utag_data);
     transition: all 0.3s ease;
 }
 
-.simple-caption .btn-primary:hover {
+.square-bg .btn-primary:hover {
     background-color: #c82333;
     border-color: #c82333;
     transform: translateY(-2px);
 }
 
-/* Responsive text sizing */
+/* Responsive */
 @media (max-width: 768px) {
-    .simple-caption .hero-title {
+    .square-bg {
+        padding: 2rem 1rem;
+    }
+    
+    .square-bg .hero-title {
         font-size: 2.5rem;
     }
     
-    .simple-caption .hero-subtitle {
+    .square-bg .hero-subtitle {
         font-size: 1.2rem;
     }
     
-    .simple-caption .btn-primary {
+    .square-bg .btn-primary {
         font-size: 1rem;
         padding: 12px 24px;
     }
