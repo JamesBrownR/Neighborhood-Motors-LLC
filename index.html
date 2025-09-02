@@ -135,10 +135,12 @@
                     </script>
                     
                     <a id="hlLogo" aria-label="Neighborhood Motors Logo" href="//neighborhoodmotors.com">
-                        <img class="dealerLogo logo logo_30 img-fluid" title="Neighborhood Motors" alt="Neighborhood Motors" 
-                             src="https://imagescdn.dealercarsearch.com/DealerImages/30/19857/s60r_logo.png">
-                    </a>
-                </div>
+        <div class="brand-logo">
+            <span class="brand-name">NEIGHBORHOOD</span>
+            <span class="brand-sub">MOTORS</span>
+        </div>
+    </a>
+</div>
                 
                 <!-- Center: Contact Info -->
                 <div class="contact-section">
@@ -327,6 +329,37 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
+    }
+}
+    /* Custom Logo Styling */
+.brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.brand-name {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.brand-sub {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 3px;
+    margin-top: -2px;
+}
+
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 1.4rem;
+    }
+    .brand-sub {
+        font-size: 0.8rem;
     }
 }
 </style>
