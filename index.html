@@ -804,6 +804,199 @@ utag.view(utag_data);
         padding: 12px 24px;
     }
 }
+    /* Testimonials Section */
+.testimonials-section {
+  background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="m0 20h100v-20z" fill="%23ffffff" opacity="0.02"/></svg>');
+  pointer-events: none;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #dc3545, #e74c3c);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #dc3545, #e74c3c, #dc3545);
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.testimonial-card:hover::before {
+  opacity: 1;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stars {
+  margin-bottom: 1.5rem;
+}
+
+.stars i {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin: 0 2px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ecf0f1;
+  margin-bottom: 2rem;
+  font-style: italic;
+  position: relative;
+}
+
+.testimonial-text::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-size: 4rem;
+  color: rgba(220, 53, 69, 0.3);
+  font-family: serif;
+}
+
+.customer-info h4 {
+  color: #dc3545;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.customer-info span {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+}
+
+.btn-reviews {
+  display: inline-block;
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-reviews::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-reviews:hover::before {
+  left: 100%;
+}
+
+.btn-reviews:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(220, 53, 69, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Overall Layout Improvements */
+.contentWrapper {
+  background: #f8f9fa;
+  padding: 0;
+}
+
+.s60r_content {
+  padding: 0;
+}
+
+/* Remove the old read more button styling */
+.readMore.btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .testimonial-card {
+    padding: 2rem;
+  }
+  
+  .testimonials-section {
+    padding: 50px 0;
+  }
+}
 </style>
 
 <script type="text/javascript">
