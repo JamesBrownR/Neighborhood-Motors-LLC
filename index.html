@@ -785,21 +785,182 @@ utag.view(utag_data);
 <div class="ContentPane_1011270 HTMLModule HTMLModule_1011270">
 
 
-<div class="filterBtns row">
-  <a class="filterInv col-md-4" href="services.html">
-  <div>
-    <div class="filterImg"></div><span>We offer the finest auto repair services.</span>
-  </div>
-  <h2>View Services</h2></a> <a class="filterApply col-md-4" href="contact.html">
-  <div>
-    <div class="filterImg"></div><span>Start our simple quote process!</span>
-  </div>
-  <h2>Get Free Quote</h2></a> <a class="filterDirections col-md-4" href="directions.html">
-  <div>
-    <div class="filterImg"></div><span>We're easily located on 1023 E 6th St.</span>
-  </div>
-  <h2>Get Directions</h2></a>
-</div></div>
+<div class="services-grid">
+  <a class="service-card" href="services.html">
+    <div class="card-icon">
+      <i class="fas fa-wrench"></i>
+    </div>
+    <h3>View Services</h3>
+    <p>Premium auto repair services with expert technicians and quality parts</p>
+    <div class="card-hover-effect"></div>
+  </a>
+  
+  <a class="service-card" href="contact.html">
+    <div class="card-icon">
+      <i class="fas fa-calculator"></i>
+    </div>
+    <h3>Get Free Quote</h3>
+    <p>Quick and transparent pricing for all your automotive repair needs</p>
+    <div class="card-hover-effect"></div>
+  </a>
+  
+  <a class="service-card" href="directions.html">
+    <div class="card-icon">
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
+    <h3>Visit Our Shop</h3>
+    <p>Conveniently located at 1023 E 6th St in the heart of Tulsa</p>
+    <div class="card-hover-effect"></div>
+  </a>
+</div>
+
+<style>
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+  padding: 0 1rem;
+}
+
+.service-card {
+  position: relative;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  border: 1px solid rgba(220, 53, 69, 0.1);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(220, 53, 69, 0.05), transparent);
+  transition: left 0.6s ease;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(220, 53, 69, 0.2);
+  color: #333;
+  text-decoration: none;
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-icon::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.service-card:hover .card-icon {
+  transform: rotate(360deg) scale(1.1);
+  background: linear-gradient(135deg, #e74c3c, #dc3545);
+}
+
+.service-card:hover .card-icon::after {
+  opacity: 1;
+  animation: shimmer 0.8s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #dc3545;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: #c82333;
+  transform: scale(1.05);
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover p {
+  color: #555;
+}
+
+.card-hover-effect {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #dc3545, #e74c3c, #dc3545);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .card-hover-effect {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+</style></div>
 <div class="ContentPane_109264 Testimonials Testimonials_109264">
 <h2>Customer Testimonials</h2>
                 <div class="testimonialWrapper">
