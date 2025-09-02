@@ -53,43 +53,202 @@
 <body class="homePage Default-dcs">
 
     <header class="s60r_headerWrapper">
-        <div id="topBar">
-            <div class="topHeader container">
-                
-    <div id="AddressPane" class="s60r_addressPane">
-
-<div class="ContentPane_109261 AddressAndPhone AddressAndPhone_109261">
-
-<div class="AddressPhone_Main">
-        <span class="LabelAddress1">
-            <i class="fa-solid fa-location-dot"></i> 1023 E 6th St
-        </span>
-        <span class="LabelCityStateZip1">Tulsa, OK 74120</span>
-        <span class="LabelPhone1">
-            <i class="fa-solid fa-phone"></i>
-            <a href="tel:+12137056862">
-                 +1 (213) 705-6862
-            </a>
-        </span>
-
-</div>
-</div></div>
-                
-    <div id="SocialMediaPane" class="s60r_SocialMediaPane">
-
-<div class="ContentPane_109262 SocialMedia SocialMedia_109262">
-
-<div class="socialMedia">
-
-            <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener" title="Follow Us on Instagram" aria-label="Follow Us on Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-</div></div></div>
+       <!-- Keep ALL the JavaScript tracking code, just replace the HTML structure part -->
+<div class="consolidated-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Left: Logo -->
+            <div class="logo-section">
+                <!-- KEEP ALL THE TEALIUM JAVASCRIPT ABOVE THIS LINE -->
+                <a id="hlLogo" aria-label="Neighborhood Motors Logo" href="//neighborhoodmotors.com">
+                    <img class="dealerLogo logo logo_30 img-fluid" title="Neighborhood Motors" alt="Neighborhood Motors" 
+                         src="https://imagescdn.dealercarsearch.com/DealerImages/30/19857/s60r_logo.png">
+                </a>
+            </div>
+            
+            <!-- Center: Contact Info -->
+            <div class="contact-section">
+                <div class="contact-info">
+                    <span class="address">
+                        <i class="fa-solid fa-location-dot"></i> 1023 E 6th St, Tulsa, OK 74120
+                    </span>
+                    <span class="phone">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+12137056862">+1 (213) 705-6862</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Right: Navigation -->
+            <div class="nav-section">
+                <nav class="main-nav">
+                    <a href="directions.html" class="nav-link">Visit Us</a>
+                    <div class="dropdown">
+                        <a href="services.html" class="nav-link dropdown-toggle">Services</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="services.html#auto-glass">Auto Glass</a>
+                            <a class="dropdown-item" href="services.html#towing">Towing & Roadside</a>
+                            <a class="dropdown-item" href="services.html#repair">Full Service Repair</a>
+                            <a class="dropdown-item" href="services.html#electric">Auto Electric</a>
+                            <a class="dropdown-item" href="services.html#collision">Collision Repair</a>
+                            <a class="dropdown-item" href="services.html#upholstery">Upholstery Repair</a>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" class="social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </nav>
             </div>
         </div>
-        <div class="s60r_header bottomHeader container">
-            <div class="logoWrapper">
+    </div>
+</div>
+
+<!-- Add the CSS -->
+<style>
+.consolidated-header {
+    background-color: #dc3545;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-section .dealerLogo {
+    max-height: 60px;
+    width: auto;
+}
+
+.contact-section {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: white;
+}
+
+.contact-info span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-info {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+</style>
                 
 
         <script type="text/javascript">
@@ -439,6 +598,7 @@ utag.view(utag_data);
 
             </div>
         </div>
+        
     </header>
 
     <main>
@@ -449,6 +609,7 @@ utag.view(utag_data);
 <div class="ContentPane_1011271 ResponsiveBanner ResponsiveBanner_1011271">
 
 <!-- Replace the entire carousel section with this simpler version -->
+<!-- Replace the entire carousel section with this version -->
 <!-- Replace the entire carousel section with this version -->
 <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -496,10 +657,10 @@ utag.view(utag_data);
     z-index: 1;
 }
 
-/* Better positioned caption */
+/* Better positioned caption - moved higher */
 .square-caption {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
