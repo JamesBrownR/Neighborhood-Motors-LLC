@@ -313,10 +313,18 @@
 }
 
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        text-align: center;
+    .directions-hero {
+        padding: 2rem 0; /* Add this line */
     }
+    
+    .directions-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .directions-hero p {
+        font-size: 1.1rem;
+    }
+}
     
     .contact-info {
         flex-direction: row;
@@ -1111,6 +1119,17 @@ utag.view(utag_data);
     font-size: 1.5rem;
   }
 }
+.map-container iframe {
+    width: 100%;
+    min-height: 400px;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .map-container iframe {
+        min-height: 300px;
+    }
+}
 </style></div>
 <section class="testimonials-section">
   <div class="container">
@@ -1186,9 +1205,9 @@ utag.view(utag_data);
   </div>
 </div>
       <div class="ContentPane_109267 ResponsiveMap ResponsiveMap_109267">
-        <div class="responsive-container d-none d-md-block">
-          <iframe title="Google Map" width="425" height="350" id="mapIframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" rel="noopener" class="lazyload" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
-        </div>
+       <div class="responsive-container">
+    <iframe title="Google Map" width="100%" height="350" id="mapIframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" rel="noopener" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
+</div>
         <div class="d-md-none mt-3 getDirections">
 <a id="directionsLink" class="btn btn-primary" style="border-radius: 0 !important;" target="_blank" rel="noopener" href="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=1023 E 6th St Tulsa OK 74120+(Neighborhood Motors)&iwloc=near">
   <i class="fa-solid fa-location-dot"></i> Get Driving Directions
