@@ -1,33 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Contact - Neighborhood Motors | Tulsa OK</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="19857.min.css">
-  <link rel="stylesheet" href="custom.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Contact - Neighborhood Motors | Tulsa OK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Auto Glass Tulsa OK, Full Service Auto Repair Tulsa OK, Collision Repair Tulsa OK, Upholstery Tulsa OK, Auto Electric Tulsa OK, Towing & Roadside Tulsa OK">
+    <meta name="description" content="Contact Neighborhood Motors in Tulsa, OK. Auto Glass, Full Service Auto Repair, Collision, Upholstery, Auto Electric, Towing & Roadside. Call now: +1 (213) 705-6862.">
+    <link rel="stylesheet" href="19857.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body class="homePage Default-dcs">
-  <header class="s60r_headerWrapper">
-    <!-- Copy the entire <header> fromh index.html here (same as services.html) -->
-  </header>
 
-  <main>
-    <section class="contentWrapper">
-      <div class="s60r_content container">
-        <h1>Contact Us</h1>
-        <p>Address: 1023 E 6th St, Tulsa, OK 74120</p>
-        <p>Phone: <a href="tel:+12137056862">+1 (213) 705-6862</a></p>
-        <p>Email: <a href="mailto:info@neighborhoodmotors.com">info@neighborhoodmotors.com</a></p>
-        <p>Hours: Monday - Friday 8 AM - 6 PM, Saturday 9 AM - 2 PM</p>
+   <header class="s60r_headerWrapper">
+    <div class="consolidated-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Left: Logo -->
+                <div class="logo-section">
+                    <a id="hlLogo" aria-label="Neighborhood Motors Logo" href="//neighborhoodmotors.com">
+        <div class="brand-logo">
+            <span class="brand-name">NEIGHBORHOOD</span>
+            <span class="brand-sub">MOTORS</span>
+        </div>
+    </a>
+</div>
+                
+                <!-- Center: Contact Info -->
+                <div class="contact-section">
+                    <div class="contact-info">
+                        <span class="address">
+                            <i class="fa-solid fa-location-dot"></i> 1023 E 6th St, Tulsa, OK 74120
+                        </span>
+                        <span class="phone">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+12137056862">+1 (213) 705-6862</a>
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Right: Navigation -->
+                <div class="nav-section">
+                    <nav class="main-nav">
+                        <a href="directions.html" class="nav-link">Visit Us</a>
+                        <div class="dropdown">
+                            <a href="services.html" class="nav-link dropdown-toggle">Services</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="services.html#auto-glass">Auto Glass</a>
+                                <a class="dropdown-item" href="services.html#towing">Towing & Roadside</a>
+                                <a class="dropdown-item" href="services.html#repair">Full Service Repair</a>
+                                <a class="dropdown-item" href="services.html#electric">Auto Electric</a>
+                                <a class="dropdown-item" href="services.html#collision">Collision Repair</a>
+                                <a class="dropdown-item" href="services.html#upholstery">Upholstery Repair</a>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" class="social-link">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+.s60r_headerWrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.consolidated-header {
+    background-color: #d82c3c;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-section .dealerLogo {
+    max-height: 60px;
+    width: auto;
+}
+
+.contact-section {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: white;
+}
+
+.contact-info span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-info {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+.brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.brand-name {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.brand-sub {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 3px;
+    margin-top: -2px;
+}
+
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 1.4rem;
+    }
+    .brand-sub {
+        font-size: 0.8rem;
+    }
+}
+</style>
+
+    <main>
+        <section class="contentWrapper">
+            <div id="ContentPane" class="s60r_content container">
+                <h1>Contact Us</h1>
+                <div style="max-width: 800px; margin: 0 auto; padding: 2rem;">
+                    <div style="background: white; padding: 3rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                        <h2 style="color: #dc3545; margin-bottom: 2rem; font-size: 2rem;">Get In Touch</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                            <div>
+                                <h3 style="color: #333; margin-bottom: 1rem;"><i class="fa-solid fa-location-dot" style="color: #dc3545; margin-right: 0.5rem;"></i>Address</h3>
+                                <p style="font-size: 1.1rem; color: #666;">1023 E 6th St<br>Tulsa, OK 74120</p>
+                            </div>
+                            
+                            <div>
+                                <h3 style="color: #333; margin-bottom: 1rem;"><i class="fa-solid fa-phone" style="color: #dc3545; margin-right: 0.5rem;"></i>Phone</h3>
+                                <p><a href="tel:+12137056862" style="font-size: 1.2rem; color: #dc3545; text-decoration: none; font-weight: 600;">+1 (213) 705-6862</a></p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                            <div>
+                                <h3 style="color: #333; margin-bottom: 1rem;"><i class="fa-solid fa-envelope" style="color: #dc3545; margin-right: 0.5rem;"></i>Email</h3>
+                                <p><a href="mailto:info@neighborhoodmotors.com" style="font-size: 1.1rem; color: #dc3545; text-decoration: none;">info@neighborhoodmotors.com</a></p>
+                            </div>
+                            
+                            <div>
+                                <h3 style="color: #333; margin-bottom: 1rem;"><i class="fa-solid fa-clock" style="color: #dc3545; margin-right: 0.5rem;"></i>Hours</h3>
+                                <p style="font-size: 1.1rem; color: #666;">Monday - Friday: 8 AM - 6 PM<br>Saturday: 9 AM - 2 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="tel:+12137056862" style="display: inline-block; background: #dc3545; color: white; padding: 15px 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; border-radius: 0; transition: all 0.3s ease;">Call Now for Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <footer class="s60r_footer">
+  <div class="container">
+    <div class="s60r_footerRight text-center">
+      <div id="ContentPane_109266" class="SEO SEO_109266" style="text-align: center; margin: 50px 0; padding: 40px 20px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <h2 class="dcsTitle" style="font-size: 2.8rem; font-weight: 800; color: #2c3e50; margin-bottom: 40px; letter-spacing: -0.5px;">Find Us</h2>
+        <div class="SeoText" itemscope itemtype="http://schema.org/AutoRepair">
+          <div style="margin-bottom: 30px;">
+            <span itemprop="name" style="font-size: 2.2rem; font-weight: 700; color: #dc3545; display: block; margin-bottom: 15px;">Neighborhood Motors</span>
+          </div>
+          <div itemtype="http://schema.org/PostalAddress" itemscope itemprop="address" style="margin-bottom: 30px;">
+            <div style="font-size: 1.6rem; color: #666; margin-bottom: 5px; font-weight: 500;">
+              <span itemprop="streetAddress">1023 E 6th St</span>
+            </div>
+            <div style="font-size: 1.6rem; color: #666; font-weight: 500;">
+              <span itemprop="addressLocality">Tulsa</span>, 
+              <span itemprop="addressRegion">OK</span> 
+              <span itemprop="postalCode">74120</span>
+            </div>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <a itemprop="telephone" href="tel:+12137056862" style="font-weight: 700; color: #dc3545; text-decoration: none; font-size: 2rem; padding: 15px 30px; border: 2px solid #dc3545; border-radius: 0; display: inline-block; transition: all 0.3s ease; background: transparent;">+1 (213) 705-6862</a>
+          </div>
+          <img itemprop="logo" src="https://imagescdn.dealercarsearch.com/DealerImages/30/19857/s60r_logo.png" alt="Logo" style="display: none;">
+        </div>
       </div>
-    </section>
-  </main>
+      <div class="ContentPane_109267 ResponsiveMap ResponsiveMap_109267">
+        <div class="responsive-container d-none d-md-block">
+          <iframe title="Google Map" width="425" height="350" id="mapIframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" rel="noopener" class="lazyload" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8475856789124!2d-95.9810378!3d36.1529291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6edff2213ca35%3A0xb5b0398d57ba1a6c!2sNeighborhood%20Motors%20LLC!5e0!3m2!1sen!2sus!4v1693420800000!5m2!1sen!2sus"></iframe>
+        </div>
+        <div class="d-md-none mt-3 getDirections">
+          <a id="directionsLink" class="btn btn-primary" style="border-radius: 0 !important;" target="_blank" rel="noopener" href="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=1023 E 6th St Tulsa OK 74120+(Neighborhood Motors)&iwloc=near">
+            <i class="fa-solid fa-location-dot"></i> Get Driving Directions
+          </a>
+        </div>
+      </div>
+      <div class="ContentPane_109263 Copyright Copyright_109263">
+        <div class="copyright_main">
+          <div class="dcsLogin">
+          </div>
+          <div class="copyright">
+            Copyright 2025 | <a href="sitemap.html" target="_blank" rel="noopener">Sitemap</a>
+            <span>| </span>
+            <a href="#" id="lv_cm_btn" onclick="document.getElementById(&quot;__tealiumGDPRcpPrefs&quot;).style.display=&quot;block&quot;;">
+              Your Privacy Choices
+              <img src="https://consent.trustarc.com/get?name=privacy_choices_icon.png" style="cursor: pointer; display: inline-block; margin-left: 5px; position: relative; top: -1px; width: 28.06px; height: 13.92px; background-size: 28.06px 13.92px; background-repeat: no-repeat;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <footer class="s60r_footer">
-    <!-- Copy the entire <footer> from services.html here -->
-  </footer>
-
-  <script src="19857.min.js"></script>
+<script type="text/javascript" src="19857.min.js"></script>
 </body>
 </html>
