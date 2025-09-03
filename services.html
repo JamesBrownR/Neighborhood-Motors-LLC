@@ -7,55 +7,241 @@
   <link rel="stylesheet" href="19857.min.css">
   <link rel="stylesheet" href="custom.css">
 </head>
-<body class="homePage Default-dcs">
-  <header class="s60r_headerWrapper">
-    <!-- Copy the entire <header> from index.html here -->
-    <div id="topBar">
-      <div class="topHeader container">
-        <div id="AddressPane" class="s60r_addressPane">
-          <div class="ContentPane_109261 AddressAndPhone AddressAndPhone_109261">
-            <div class="AddressPhone_Main">
-              <span class="LabelAddress1"><i class="fa-solid fa-location-dot"></i> 1023 E 6th St</span>
-              <span class="LabelCityStateZip1">Tulsa, OK 74120</span>
-              <span class="LabelPhone1"><i class="fa-solid fa-phone"></i><a href="tel:+12137056862">+1 (213) 705-6862</a></span>
-            </div>
-          </div>
-          <div id="SocialMediaPane" class="s60r_SocialMediaPane">
-            <div class="ContentPane_109262 SocialMedia SocialMedia_109262">
-              <div class="socialMedia">
-                <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" rel="noopener" title="Follow Us on Instagram" aria-label="Follow Us on Instagram"><i class="fa-brands fa-instagram"></i></a>
-              </div>
-            </div>
-          </div>
+
+   <header class="s60r_headerWrapper">
+    <div class="consolidated-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Left: Logo -->
+                <div class="logo-section">
+                    <a id="hlLogo" aria-label="Neighborhood Motors Logo" href="//neighborhoodmotors.com">
+        <div class="brand-logo">
+            <span class="brand-name">NEIGHBORHOOD</span>
+            <span class="brand-sub">MOTORS</span>
         </div>
-      </div>
-      <div class="s60r_header bottomHeader container">
-        <div class="logoWrapper">
-          <a id="hlLogo" aria-label="Neighborhood Motors Logo" href="index.html">
-          </a>
-        </div>
-        <div class="menuWrapper">
-          <nav id="s60r_menu" class="navbar navbar-expand-lg">
-            <button class="siteMenu navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">Site Menu</button>
-            <div class="collapse navbar-collapse" id="siteNav">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a href="directions.html" class="nav-link"><span>Visit Us</span></a></li>
-                <li class="nav-item dropdown"><a href="services.html" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Services</span></a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#auto-glass"><span>Auto Glass</span></a>
-                    <a class="dropdown-item" href="#towing"><span>Towing & Roadside</span></a>
-                    <a class="dropdown-item" href="#repair"><span>Full Service Repair</span></a>
-                    <a class="dropdown-item" href="#electric"><span>Auto Electric</span></a>
-                    <a class="dropdown-item" href="#collision"><span>Collision Repair</span></a>
-                    <a class="dropdown-item" href="#upholstery"><span>Upholstery Repair</span></a>
-                  </div>
-                </li>
-              </ul>
+    </a>
+</div>
+                
+                <!-- Center: Contact Info -->
+                <div class="contact-section">
+                    <div class="contact-info">
+                        <span class="address">
+                            <i class="fa-solid fa-location-dot"></i> 1023 E 6th St, Tulsa, OK 74120
+                        </span>
+                        <span class="phone">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+12137056862">+1 (213) 705-6862</a>
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Right: Navigation -->
+                <div class="nav-section">
+                    <nav class="main-nav">
+                        <a href="directions.html" class="nav-link">Visit Us</a>
+                        <div class="dropdown">
+                            <a href="services.html" class="nav-link dropdown-toggle">Services</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="services.html#auto-glass">Auto Glass</a>
+                                <a class="dropdown-item" href="services.html#towing">Towing & Roadside</a>
+                                <a class="dropdown-item" href="services.html#repair">Full Service Repair</a>
+                                <a class="dropdown-item" href="services.html#electric">Auto Electric</a>
+                                <a class="dropdown-item" href="services.html#collision">Collision Repair</a>
+                                <a class="dropdown-item" href="services.html#upholstery">Upholstery Repair</a>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/neighborhoodmotorsautogroup" target="_blank" class="social-link">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </nav>
+                </div>
             </div>
-          </nav>
         </div>
-      </div>
-    </header>
+    </div>
+</header>
+
+<style>
+.s60r_headerWrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.consolidated-header {
+    background-color: #d82c3c;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-section .dealerLogo {
+    max-height: 60px;
+    width: auto;
+}
+
+.contact-section {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: white;
+}
+
+.contact-info span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-info {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+.brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.brand-name {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.brand-sub {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 3px;
+    margin-top: -2px;
+}
+
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 1.4rem;
+    }
+    .brand-sub {
+        font-size: 0.8rem;
+    }
+}
+</style>
 
   <main>
     <section class="contentWrapper">
